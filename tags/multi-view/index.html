@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Tag: Multi-view | 淹死了的鱼的博客</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Jason">
+<meta property="og:url" content="https://junfish.github.io/tags/Multi-view/index.html">
+<meta property="og:site_name" content="Jason">
+<meta property="og:locale" content="zh_CH">
+<meta property="article:author" content="Jason Yu">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://junfish.github.io/tags/Multi-view/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/jason_favicon.ico" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/junfish" target="_blank">
+          <img class="img-circle img-rotate" src="/images/watermelon.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jason</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">CREAM</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Jinan, China; Wuxi, China; Bethlehem, U.S.</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-publications">
+          <a href="/publications">
+            
+            <i class="icon icon-list"></i>
+            
+            <span class="menu-title">Publications</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies">
+            
+            <i class="icon icon-douban"></i>
+            
+            <span class="menu-title">Movies</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/junfish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/images/wechat.JPG" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="/images/TIM.JPG" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>没有事情就是最好的事情!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Recreation/">Recreation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing-Skills/">Writing Skills</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/">站点建设</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/E-mail/" rel="tag">E-mail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ImageNet/" rel="tag">ImageNet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeanCloud/" rel="tag">LeanCloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-X-Learning/" rel="tag">Multi-X Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-class/" rel="tag">Multi-class</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-instance/" rel="tag">Multi-instance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-label/" rel="tag">Multi-label</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-source/" rel="tag">Multi-source</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-task/" rel="tag">Multi-task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Multi-view/" rel="tag">Multi-view</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PTM/" rel="tag">PTM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Preprocess/" rel="tag">Preprocess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/" rel="tag">SSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/" rel="tag">Valine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark-datasets/" rel="tag">benchmark datasets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/billiards/" rel="tag">billiards</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/comment-system/" rel="tag">comment system</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macintosh/" rel="tag">macintosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugins/" rel="tag">plugins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminology/" rel="tag">terminology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/" rel="tag">writing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" rel="tag">评论系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%84%E5%A4%84%E7%90%86/" rel="tag">预处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/E-mail/" style="font-size: 13px;">E-mail</a> <a href="/tags/ImageNet/" style="font-size: 13px;">ImageNet</a> <a href="/tags/LeanCloud/" style="font-size: 13px;">LeanCloud</a> <a href="/tags/Multi-X-Learning/" style="font-size: 13px;">Multi-X Learning</a> <a href="/tags/Multi-class/" style="font-size: 13px;">Multi-class</a> <a href="/tags/Multi-instance/" style="font-size: 13px;">Multi-instance</a> <a href="/tags/Multi-label/" style="font-size: 13px;">Multi-label</a> <a href="/tags/Multi-source/" style="font-size: 13px;">Multi-source</a> <a href="/tags/Multi-task/" style="font-size: 13px;">Multi-task</a> <a href="/tags/Multi-view/" style="font-size: 13px;">Multi-view</a> <a href="/tags/PTM/" style="font-size: 13px;">PTM</a> <a href="/tags/Preprocess/" style="font-size: 13px;">Preprocess</a> <a href="/tags/SSL/" style="font-size: 13px;">SSL</a> <a href="/tags/Valine/" style="font-size: 13px;">Valine</a> <a href="/tags/benchmark-datasets/" style="font-size: 13px;">benchmark datasets</a> <a href="/tags/billiards/" style="font-size: 13px;">billiards</a> <a href="/tags/comment-system/" style="font-size: 13px;">comment system</a> <a href="/tags/github/" style="font-size: 13px;">github</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/macintosh/" style="font-size: 13px;">macintosh</a> <a href="/tags/plugins/" style="font-size: 13px;">plugins</a> <a href="/tags/terminology/" style="font-size: 13px;">terminology</a> <a href="/tags/writing/" style="font-size: 13px;">writing</a> <a href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">评论系统</a> <a href="/tags/%E9%A2%84%E5%A4%84%E7%90%86/" style="font-size: 13px;">预处理</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Recreation/">Recreation</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/10/02/terminology-in-billiards/" class="title">Terminology in Billiards</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-02T23:11:56.000Z" itemprop="datePublished">2021-10-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Writing-Skills/">Writing Skills</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/15/practice-in-email-writing/" class="title">Practice in Professional Email Writing</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-15T22:53:54.000Z" itemprop="datePublished">2021-09-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/10/difference-between-multi-X-learning/" class="title">Definition of Different Multi-X Learning</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-10T20:15:11.000Z" itemprop="datePublished">2021-09-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/26/preprocess-imagenet-ILSVRC2012/" class="title">ImageNet 从下载到喂入模型训练</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-26T16:03:03.000Z" itemprop="datePublished">2021-07-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/07/popular-CV-dataset-intro/" class="title">Popular Datasets in SSL of CV</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-07T17:49:38.000Z" itemprop="datePublished">2021-07-07</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  <article class="content article article-tags post-type-list" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="name" class="hidden-xs">Tag: Multi-view</h1>
+      <p class="text-muted hidden-xs">Total 1 articles</p>
+      <nav role="navigation" id="nav-main" class="okayNav">
+        <ul>
+          <li><a href="/tags">All</a></li>
+          
+          <li><a href="/tags/hexo/">hexo</a></li>
+          
+          <li><a href="/tags/github/">github</a></li>
+          
+          <li><a href="/tags/macintosh/">macintosh</a></li>
+          
+          <li><a href="/tags/plugins/">plugins</a></li>
+          
+          <li><a href="/tags/ImageNet/">ImageNet</a></li>
+          
+          <li><a href="/tags/Preprocess/">Preprocess</a></li>
+          
+          <li><a href="/tags/预处理/">预处理</a></li>
+          
+          <li><a href="/tags/comment-system/">comment system</a></li>
+          
+          <li><a href="/tags/LeanCloud/">LeanCloud</a></li>
+          
+          <li><a href="/tags/Valine/">Valine</a></li>
+          
+          <li><a href="/tags/评论系统/">评论系统</a></li>
+          
+          <li><a href="/tags/PTM/">PTM</a></li>
+          
+          <li><a href="/tags/SSL/">SSL</a></li>
+          
+          <li><a href="/tags/benchmark-datasets/">benchmark datasets</a></li>
+          
+          <li><a href="/tags/CV/">CV</a></li>
+          
+          <li><a href="/tags/Multi-class/">Multi-class</a></li>
+          
+          <li><a href="/tags/Multi-label/">Multi-label</a></li>
+          
+          <li><a href="/tags/E-mail/">E-mail</a></li>
+          
+          <li><a href="/tags/writing/">writing</a></li>
+          
+          <li><a href="/tags/Multi-X-Learning/">Multi-X Learning</a></li>
+          
+          <li><a href="/tags/Multi-instance/">Multi-instance</a></li>
+          
+          <li><a href="/tags/Multi-view/">Multi-view</a></li>
+          
+          <li><a href="/tags/Multi-source/">Multi-source</a></li>
+          
+          <li><a href="/tags/Multi-task/">Multi-task</a></li>
+          
+          <li><a href="/tags/billiards/">billiards</a></li>
+          
+          <li><a href="/tags/terminology/">terminology</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- /header -->
+    <div class="article-body">
+      <div class="row">
+        
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2021-09-10T20:15:11.000Z" itemprop="datePublished">2021-09-10</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/2021/09/10/difference-between-multi-X-learning/">Definition of Different Multi-X Learning</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/Multi-class/" class="label label-default mb">Multi-class</a>
+     
+      <a href="/tags/Multi-label/" class="label label-default mb">Multi-label</a>
+     
+      <a href="/tags/Multi-X-Learning/" class="label label-default mb">Multi-X Learning</a>
+     
+     
+      <span class="label label-default mb">···</span>
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+      </div>
+    </div>
+  </article>
+   
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/junfish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/images/wechat.JPG" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="/images/TIM.JPG" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
