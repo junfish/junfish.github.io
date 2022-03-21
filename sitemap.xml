@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://junfish.github.io/links/index.html</loc>
+    
+    <lastmod>2022-03-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/2021/10/02/terminology-in-billiards/</loc>
     
     <lastmod>2021-10-03</lastmod>
@@ -52,13 +59,6 @@
   
   <url>
     <loc>https://junfish.github.io/publications/index.html</loc>
-    
-    <lastmod>2021-07-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/links/index.html</loc>
     
     <lastmod>2021-07-06</lastmod>
     
