@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://junfish.github.io/2021/07/26/preprocess-imagenet-ILSVRC2012/</loc>
+    
+    <lastmod>2022-03-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/publications/index.html</loc>
     
     <lastmod>2022-03-21</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://junfish.github.io/2021/07/07/popular-CV-dataset-intro/</loc>
     
     <lastmod>2021-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/2021/07/26/preprocess-imagenet-ILSVRC2012/</loc>
-    
-    <lastmod>2021-07-27</lastmod>
     
   </url>
   
