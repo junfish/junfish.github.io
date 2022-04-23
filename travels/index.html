@@ -582,7 +582,7 @@ option = {
             type: 'effectScatter',
             coordinateSystem: 'geo',
             data: convertData(data),
-            symbolSize: 10,
+            symbolSize: 6,
             showEffectOn: 'render',
             rippleEffect: {
                 brushType: 'stroke'
@@ -762,7 +762,7 @@ var color = ['#ffa022', '#a6c84c', '#46bee9'];
 var series = [];
 [['All', All], ['Domestic', Domestic], ['International', International]].forEach(function (item, i) {
     series.push({
-        name: item[0],
+        name: item[0],//item[0],
         type: 'lines',
         zlevel: 1,
         effect: {
@@ -806,10 +806,12 @@ var series = [];
         name: item[0],
         type: 'effectScatter',
         coordinateSystem: 'geo',
-        zlevel: 2,
+        showEffectOn: 'render',
         rippleEffect: {
-            brushType: 'stroke'
+                brushType: 'stroke'
         },
+        hoverAnimation: true,
+        zlevel: 2,
         label: {
             normal: {
                 show: false, // control the tips of every position point
@@ -818,13 +820,16 @@ var series = [];
                 formatter: '{b}'
             }
         },
+
         // symbolSize: function (val) {
         //     return val[2] / 8; // 机场点的大小
         // },
-        symbolSize: 1,
+        symbolSize: 3.5,
         itemStyle: {
             normal: {
-                color: color[i]
+                color: color[i],
+                shadowBlur: 2,
+                shadowColor: '#333'
             }
         },
         // data: item[1].map(function (dataItem) {
@@ -984,7 +989,7 @@ test.setOption(option);
       <div class="modal-body">
         <div class="donate-box">
           <div class="donate-head">
-            <p>Maybe you could buy me a piece of bus ticket.</p>
+            <p>Maybe you could buy me a bus ticket.</p>
           </div>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
@@ -992,14 +997,14 @@ test.setOption(option);
                 <img src="/images/donate/alipayimg.jpeg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
-              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a bus ticket!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
                 <img src="/images/donate/wechatpayimg.jpeg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
-              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a bus ticket!</p>
             </div>
           </div>
           <div class="donate-footer">
