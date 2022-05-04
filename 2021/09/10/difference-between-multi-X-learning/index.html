@@ -18,15 +18,15 @@
   
   
   <title>Definition of Different Multi-X Learning | 淹死了的鱼的博客</title>
-  <meta name="description" content="1. Multi-output Level  Multi-class classification[1] Label of data is defined as multiple (3+3+3+) classes, but any sample in the dataset is specified into only one of these multiple classes. If we u">
+  <meta name="description" content="0. Introduction We discuss Multi-X Learning in two main categories: Multi-input learning and multi-output learning. Their relationships are shown in an imperfect venn diagram as follows. The dotted l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Definition of Different Multi-X Learning">
 <meta property="og:url" content="https://junfish.github.io/2021/09/10/difference-between-multi-X-learning/index.html">
 <meta property="og:site_name" content="Jason">
-<meta property="og:description" content="1. Multi-output Level  Multi-class classification[1] Label of data is defined as multiple (3+3+3+) classes, but any sample in the dataset is specified into only one of these multiple classes. If we u">
+<meta property="og:description" content="0. Introduction We discuss Multi-X Learning in two main categories: Multi-input learning and multi-output learning. Their relationships are shown in an imperfect venn diagram as follows. The dotted l">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-09-10T20:15:11.000Z">
-<meta property="article:modified_time" content="2022-03-25T21:48:42.937Z">
+<meta property="article:modified_time" content="2022-05-04T21:21:31.438Z">
 <meta property="article:author" content="Jason Yu">
 <meta property="article:tag" content="Multi-X Learning">
 <meta property="article:tag" content="Multi-class">
@@ -378,7 +378,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-multi-output-level"><span class="toc-number">1.</span> <span class="toc-text"> 1. Multi-output Level</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-class-classificationsup1sup"><span class="toc-number">1.1.</span> <span class="toc-text"> Multi-class classification[1]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-label-classificationsup234sup"><span class="toc-number">1.2.</span> <span class="toc-text"> Multi-label classification[2][3][4]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-task-learningsup56sup"><span class="toc-number">1.3.</span> <span class="toc-text"> Multi-task Learning[5][6]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-multi-input-level"><span class="toc-number">2.</span> <span class="toc-text"> 2. Multi-input Level</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-instance-learningsup7sup"><span class="toc-number">2.1.</span> <span class="toc-text"> Multi-instance Learning[7]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-view-learningsup8sup"><span class="toc-number">2.2.</span> <span class="toc-text"> Multi-view Learning[8]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-comparison-and-connection"><span class="toc-number">3.</span> <span class="toc-text"> 3. Comparison and Connection</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-label-multi-task-learning"><span class="toc-number">3.1.</span> <span class="toc-text"> Multi-label &amp; Multi-task Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-task-and-multi-view-learning"><span class="toc-number">3.2.</span> <span class="toc-text"> Multi-task and Multi-view Learning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-transfer-learning"><span class="toc-number">4.</span> <span class="toc-text"> 4. Transfer Learning</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">5.</span> <span class="toc-text"> Reference</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-introduction"><span class="toc-number">1.</span> <span class="toc-text"> 0. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-multi-output-level"><span class="toc-number">2.</span> <span class="toc-text"> 1. Multi-output Level</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-class-classificationsup1sup"><span class="toc-number">2.1.</span> <span class="toc-text"> Multi-class classification[1]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-label-classificationsup234sup"><span class="toc-number">2.2.</span> <span class="toc-text"> Multi-label classification[2][3][4]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-target-regressionsup5sup"><span class="toc-number">2.3.</span> <span class="toc-text"> Multi-target Regression[5]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-task-learningsup67sup"><span class="toc-number">2.4.</span> <span class="toc-text"> Multi-task Learning[6][7]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-multi-input-level"><span class="toc-number">3.</span> <span class="toc-text"> 2. Multi-input Level</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-instance-learningsup8sup"><span class="toc-number">3.1.</span> <span class="toc-text"> Multi-instance Learning[8]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-view-learningsup9sup"><span class="toc-number">3.2.</span> <span class="toc-text"> Multi-view Learning[9]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-transfer-learningsup10sup"><span class="toc-number">4.</span> <span class="toc-text"> 3. Transfer Learning[10]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-comparison-and-connectionsup7sup"><span class="toc-number">5.</span> <span class="toc-text"> 4. Comparison and Connection[7]</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-label-learning-multi-target-regressionsup5sup"><span class="toc-number">5.1.</span> <span class="toc-text"> Multi-label Learning &amp; Multi-target Regression[5]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-label-learning-multi-task-learning"><span class="toc-number">5.2.</span> <span class="toc-text"> Multi-label Learning &amp; Multi-task Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-view-learning-multi-task-learning"><span class="toc-number">5.3.</span> <span class="toc-text"> Multi-view Learning &amp; Multi-task Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transfer-learning-multi-task-learning"><span class="toc-number">5.4.</span> <span class="toc-text"> Transfer Learning &amp; Multi-task Learning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">6.</span> <span class="toc-text"> Reference</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -418,6 +418,13 @@
 
 
         
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
@@ -427,34 +434,46 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/09/10/difference-between-multi-X-learning/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 511(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 862(words)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3(minutes)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 5(minutes)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="1-multi-output-level"><a class="markdownIt-Anchor" href="#1-multi-output-level"></a> 1. Multi-output Level</h3>
+        <h3 id="0-introduction"><a class="markdownIt-Anchor" href="#0-introduction"></a> 0. Introduction</h3>
+<p>We discuss Multi-X Learning in two main categories: Multi-input learning and multi-output learning. Their relationships are shown in an imperfect venn diagram as follows. The dotted line implies some special cases would make itself cross the boundaries among these multi-X learning paradigms.</p>
+<center> 
+  <img src = "/images/Venn_Multi-X.png" width="60%" height="60%" />
+</center>
+<h3 id="1-multi-output-level"><a class="markdownIt-Anchor" href="#1-multi-output-level"></a> 1. Multi-output Level</h3>
 <h4 id="multi-class-classificationsup1sup"><a class="markdownIt-Anchor" href="#multi-class-classificationsup1sup"></a> Multi-class classification<sup><a href="#1-ref">[1]</a></sup></h4>
 <p>Label of data is defined as multiple (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>+</mo></mrow><annotation encoding="application/x-tex">3+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">+</span></span></span></span>) classes, but any sample in the dataset is specified into only one of these multiple classes. If we use a one-hot encoding to represent different classes, then all labels in the dataset contain the only <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> and leave the left values as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.</p>
 <h4 id="multi-label-classificationsup234sup"><a class="markdownIt-Anchor" href="#multi-label-classificationsup234sup"></a> Multi-label classification<sup><a href="#2-ref">[2]</a><a href="#3-ref">[3]</a><a href="#4-ref">[4]</a></sup></h4>
-<p>It is a generalization of the multi-class classification problem; in the multi-label problem there is more than one class assigned to a sample. Thus, if its label is represented by a one-hot encoding, there is no constraint on the number of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>s or <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>s on the entries of the binary vector.</p>
-<h4 id="multi-task-learningsup56sup"><a class="markdownIt-Anchor" href="#multi-task-learningsup56sup"></a> Multi-task Learning<sup><a href="#5-ref">[5]</a><a href="#6-ref">[6]</a></sup></h4>
-<p>MTL aims to learn <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> related tasks simutaneously to improve the performance of a model by sharing the information among these different tasks. The most frequent MTL is homogeneous MTL (same task type) and homogeneous feature MTL (same feature space)</p>
+<p>It can be understood as a generalization of the multi-class classification problem;there is more than one class assigned to a sample in multi-label problem . Thus, if its label is represented by a one-hot encoding, there is no constraint on the number of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>s or <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>s on the entries of the binary vector.</p>
+<h4 id="multi-target-regressionsup5sup"><a class="markdownIt-Anchor" href="#multi-target-regressionsup5sup"></a> Multi-target Regression<sup><a href="#5-ref">[5]</a></sup></h4>
+<p>Multi-target regression aims to simultaneously learn multiple regression responses attached to any instance, in which each response has its own distribution but shares same instance set.</p>
+<h4 id="multi-task-learningsup67sup"><a class="markdownIt-Anchor" href="#multi-task-learningsup67sup"></a> Multi-task Learning<sup><a href="#6-ref">[6]</a><a href="#7-ref">[7]</a></sup></h4>
+<p>MTL aims to learn <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> related tasks simultaneously to improve the performance of a model by sharing the information among these different tasks. These tasks could be represented by datasets from related but different sources.</p>
 <h3 id="2-multi-input-level"><a class="markdownIt-Anchor" href="#2-multi-input-level"></a> 2. Multi-input Level</h3>
-<h4 id="multi-instance-learningsup7sup"><a class="markdownIt-Anchor" href="#multi-instance-learningsup7sup"></a> Multi-instance Learning<sup><a href="#7-ref">[7]</a></sup></h4>
-<p>Different from multi-label learning with multiple labels per instance, multi-instance learning has just one label per several instances. Multi-instance learning is a special supervised learning paradigm targets the bags of the instances. If any instance in a bag of instances is labeled as positive, then this bag is labeled as positive, otherwise it’s labeled as negative if all the instances are labeled as negative. However, there is no any label attached to the individual instances.h</p>
-<h4 id="multi-view-learningsup8sup"><a class="markdownIt-Anchor" href="#multi-view-learningsup8sup"></a> Multi-view Learning<sup><a href="#8-ref">[8]</a></sup></h4>
-<p>Multi-view learning has different sets of features for the single-source data in a single-task learning, such as different color features and texture features extracted from the images; these views may also be obtained from different sources, such as urls and words contained in a web page.</p>
-<h3 id="3-comparison-and-connection"><a class="markdownIt-Anchor" href="#3-comparison-and-connection"></a> 3. Comparison and Connection</h3>
-<h4 id="multi-label-multi-task-learning"><a class="markdownIt-Anchor" href="#multi-label-multi-task-learning"></a> Multi-label &amp; Multi-task Learning</h4>
-<p>If each of the multiple labels is treated as a task, or say, transformed into binary classification problem and independently training a corresponding classifier for each label, then we can resort to the multi-task learning model to solve the multi-label problem. This special multi-task learning share the same data among different tasks.</p>
-<h4 id="multi-task-and-multi-view-learning"><a class="markdownIt-Anchor" href="#multi-task-and-multi-view-learning"></a> Multi-task and Multi-view Learning</h4>
-<h3 id="4-transfer-learning"><a class="markdownIt-Anchor" href="#4-transfer-learning"></a> 4. Transfer Learning</h3>
-<p>Learn representations on a target domain with the help of source domain.</p>
+<h4 id="multi-instance-learningsup8sup"><a class="markdownIt-Anchor" href="#multi-instance-learningsup8sup"></a> Multi-instance Learning<sup><a href="#8-ref">[8]</a></sup></h4>
+<p>Different from multi-label learning with multiple labels per instance, multi-instance learning has just one label per several instances. Multi-instance learning is a special supervised learning paradigm that targets the bags of the instances. If any instance in a bag of instances is labeled as positive, then this bag is labeled as positive, otherwise it’s labeled as negative if all the instances are labeled as negative. However, there is no any label attached to the individual instances.</p>
+<h4 id="multi-view-learningsup9sup"><a class="markdownIt-Anchor" href="#multi-view-learningsup9sup"></a> Multi-view Learning<sup><a href="#9-ref">[9]</a></sup></h4>
+<p>Multi-view learning has different sets of features for the single-source data in a single-task learning, such as different color features and texture features extracted from the images; these views may also be obtained from different sources, such as urls and words contained in a web page. Multi-modality learning is a special case of multi-view learning, in which different sets of features are represented by data in different modalities.</p>
+<h3 id="3-transfer-learningsup10sup"><a class="markdownIt-Anchor" href="#3-transfer-learningsup10sup"></a> 3. Transfer Learning<sup><a href="#10-ref">[10]</a></sup></h3>
+<p>Learn representations on a target domain with the help of source domain, which alleviates the dependence on labeled data in target domain and achieves matching results compared with leaning from large-scale annotated dataset.</p>
+<h3 id="4-comparison-and-connectionsup7sup"><a class="markdownIt-Anchor" href="#4-comparison-and-connectionsup7sup"></a> 4. Comparison and Connection<sup><a href="#7-ref">[7]</a></sup></h3>
+<h4 id="multi-label-learning-multi-target-regressionsup5sup"><a class="markdownIt-Anchor" href="#multi-label-learning-multi-target-regressionsup5sup"></a> Multi-label Learning &amp; Multi-target Regression<sup><a href="#5-ref">[5]</a></sup></h4>
+<p>If all targets in a multi-target regression problem are binary variates (predicted by using logistic regression), we can understand it as a special case of multi-label learning.</p>
+<h4 id="multi-label-learning-multi-task-learning"><a class="markdownIt-Anchor" href="#multi-label-learning-multi-task-learning"></a> Multi-label Learning &amp; Multi-task Learning</h4>
+<p>Multi-label learning takes advantage of dataset in which multiple labels are associated with identical data point. However, multi-task learning always targets several datasets from related but different data sources. If each of the multiple labels is separately treated as a task, but learning a sharing machine to predict all labels, then we can also resort to multi-task learning model to solve multi-label problem.</p>
+<h4 id="multi-view-learning-multi-task-learning"><a class="markdownIt-Anchor" href="#multi-view-learning-multi-task-learning"></a> Multi-view Learning &amp; Multi-task Learning</h4>
+<p>Multi-view learning is a single task learning with many different sets of features where multi-task learning aims to learn different tasks together. The intersection between them is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∅</mi></mrow><annotation encoding="application/x-tex">\emptyset</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">∅</span></span></span></span>.</p>
+<h4 id="transfer-learning-multi-task-learning"><a class="markdownIt-Anchor" href="#transfer-learning-multi-task-learning"></a> Transfer Learning &amp; Multi-task Learning</h4>
+<p>Transfer learning aims to improve target task by using source task, but all tasks are equally treated and mutually learn representations from each other in Multi-task learning. On the other hand, target task is learned after source task in transfer learning but all tasks are shared and learned together in multi-task learning. From my point view, transfer learning is a special case of multi-task learning (mutually transfer learning).</p>
 <h3 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h3>
 <div id = "1-ref"></div>
 <p>[1] <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiclass_classification">https://en.wikipedia.org/wiki/Multiclass_classification</a></p>
@@ -465,13 +484,17 @@
 <div id = '4-ref'></div>
 <p>[4] Zhou, Zhi-Hua, and Min-Ling Zhang. “Multi-label Learning.” (2017): 875-881.</p>
 <div id = '5-ref'></div>
-<p>[5] Caruana, Rich. “Multitask learning.” <em>Machine learning</em> 28.1 (1997): 41-75.</p>
+<p>[5] Xu, Donna, Yaxin Shi, Ivor W. Tsang, Yew-Soon Ong, Chen Gong, and Xiaobo Shen. “Survey on multi-output learning.” IEEE transactions on neural networks and learning systems 31, no. 7 (2019): 2409-2429.</p>
 <div id = '6-ref'></div>
-<p>[6] Zhang, Yu, and Qiang Yang. “A survey on multi-task learning.” <em>arXiv preprint arXiv:1707.08114</em> (2017).</p>
+<p>[6] Caruana, Rich. “Multitask learning.” <em>Machine learning</em> 28.1 (1997): 41-75.</p>
 <div id = '7-ref'></div>
-<p>[7] <a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~juny/MILL/review.htm">https://www.cs.cmu.edu/~juny/MILL/review.htm</a></p>
+<p>[7] Zhang, Yu, and Qiang Yang. “A survey on multi-task learning.” <em>arXiv preprint arXiv:1707.08114</em> (2017).</p>
 <div id = '8-ref'></div>
-<p>[8] Xu, Chang, Dacheng Tao, and Chao Xu. “A survey on multi-view learning.” <em>arXiv preprint arXiv:1304.5634</em> (2013).</p>
+<p>[8] <a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~juny/MILL/review.htm">https://www.cs.cmu.edu/~juny/MILL/review.htm</a></p>
+<div id = '9-ref'></div>
+<p>[9] Xu, Chang, Dacheng Tao, and Chao Xu. “A survey on multi-view learning.” <em>arXiv preprint arXiv:1304.5634</em> (2013).</p>
+<div id = '10-ref'></div>
+<p>[10] Zhuang, Fuzhen, Zhiyuan Qi, Keyu Duan, Dongbo Xi, Yongchun Zhu, Hengshu Zhu, Hui Xiong, and Qing He. “A comprehensive survey on transfer learning.” <em>Proceedings of the IEEE</em> 109, no. 1 (2020): 43-76.</p>
 
       
     </div>
@@ -668,6 +691,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
 
 
