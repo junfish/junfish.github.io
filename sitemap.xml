@@ -193,13 +193,6 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/tags/plugins/</loc>
-    <lastmod>2022-05-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://junfish.github.io/tags/comment-system/</loc>
     <lastmod>2022-05-05</lastmod>
     <changefreq>daily</changefreq>
@@ -228,6 +221,13 @@
   </url>
   
   <url>
+    <loc>https://junfish.github.io/tags/plugins/</loc>
+    <lastmod>2022-05-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/tags/E-mail/</loc>
     <lastmod>2022-05-05</lastmod>
     <changefreq>daily</changefreq>
@@ -236,20 +236,6 @@
   
   <url>
     <loc>https://junfish.github.io/tags/writing/</loc>
-    <lastmod>2022-05-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/billiards/</loc>
-    <lastmod>2022-05-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/terminology/</loc>
     <lastmod>2022-05-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -271,6 +257,20 @@
   
   <url>
     <loc>https://junfish.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2022-05-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/billiards/</loc>
+    <lastmod>2022-05-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/terminology/</loc>
     <lastmod>2022-05-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -328,14 +328,14 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/categories/Recreation/</loc>
+    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2022-05-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <loc>https://junfish.github.io/categories/Recreation/</loc>
     <lastmod>2022-05-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
