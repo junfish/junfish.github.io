@@ -6,7 +6,7 @@
   <link href="https://junfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junfish.github.io/"/>
-  <updated>2022-05-04T21:20:39.668Z</updated>
+  <updated>2022-05-24T23:36:26.045Z</updated>
   <id>https://junfish.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>common_tmux_commands</title>
+    <link href="https://junfish.github.io/2022/05/24/common-tmux-commands/"/>
+    <id>https://junfish.github.io/2022/05/24/common-tmux-commands/</id>
+    <published>2022-05-24T23:31:35.000Z</published>
+    <updated>2022-05-24T23:36:26.045Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="structure"><a class="markdownIt-Anchor" href="#structure"></a> Structure</h3>    <div class="markmap-container" style="height:300px">      <svg data='{"t":"root","d":0,"v":"","c":[{"t":"list_item","d":2,"p":{"lines":[0,1]},"v":"Session 1","c":[{"t":"list_item","d":4,"p":{"lines":[1,2]},"v":"Window 1","c":[{"t":"list_item","d":6,"p":{"lines":[2,3]},"v":"Pane 1"},{"t":"list_item","d":6,"p":{"lines":[3,4]},"v":"Pane 2"},{"t":"list_item","d":6,"p":{"lines":[4,5]},"v":"······"}]},{"t":"list_item","d":4,"p":{"lines":[5,6]},"v":"Window 2"},{"t":"list_item","d":4,"p":{"lines":[6,7]},"v":"······"}]},{"t":"list_item","d":2,"p":{"lines":[8,9]},"v":"Session 2"},{"t":"list_item","d":2,"p":{"lines":[9,10]},"v":"······"}],"p":{}}'></svg>    </div>  <h3 id="command"><a class="markdownIt-Anchor" href="#command"></a> Command</h3><ol><li><p>Start a new session</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux new -s &lt;session_name&gt;</span><br><span class="line">tmux <span class="comment"># 按照 0, 1, 2, ··· 编号</span></span><br></pre></td></tr></table></figure></li><li><p>Rename a session</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux rename-session -t &lt;target_session_name&gt; &lt;session_new_name&gt;</span><br></pre></td></tr></table></figure></li><li><p>Detach the current session</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux detach</span><br></pre></td></tr></table></figure></li><li><p>Show all current sessions</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux ls</span><br></pre></td></tr></table></figure></li><li><p>Attach a session</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux attach -t &lt;session_name&gt;</span><br></pre></td></tr></table></figure></li><li><p>Kill a session</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tmux kill-session -t &lt;session_name&gt; <span class="comment"># kill the specific session</span></span><br><span class="line">tmux kill-session -a <span class="comment"># kill all sessions but the current</span></span><br><span class="line">tmux kill-session -a -t &lt;session_name&gt; <span class="comment"># kill all sessions but the &lt;session_name&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>Switch between two sessions</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux switch -t &lt;session_name&gt; # switch to the &lt;session_name&gt;</span><br></pre></td></tr></table></figure></li><li><p>Create a new window</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux new-window -n &lt;window_name&gt; # create a new window named window_name</span><br></pre></td></tr></table></figure></li><li><p>Select a window</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux select-window -t &lt;window_name/window_number&gt; # swap to a specific window</span><br></pre></td></tr></table></figure></li><li><p>Rename a window</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux rename-window &lt;new_name&gt; # rename the current window</span><br></pre></td></tr></table></figure></li><li><p>Split a window into two panes</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux split-window # divide the window into two top and bottom panes</span><br><span class="line">tmux split-window -h # divide the window into two left and right panes</span><br></pre></td></tr></table></figure></li><li><p>Move cursor</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux select-pane -U/-D/-L/-R # move the cursor to the top/bottom/left/right pane</span><br></pre></td></tr></table></figure></li><li><p>Swap two panes</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux swap-pane -U/-D # move the current pane to the top/bottom</span><br></pre></td></tr></table></figure></li></ol><h3 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h3><p>[1] <a href="https://gist.github.com/ryerh/14b7c24dfd623ef8edc7">Tmux 快捷键 &amp; 速查表 &amp; 简明教程</a></p><p>[2] <a href="https://tmuxcheatsheet.com/">Tmux Cheat Sheet &amp; Quick Reference</a></p>    <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>    <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>    <script> document.querySelectorAll('.markmap-container>svg').forEach(mindmap => markmap.Markmap.create(mindmap, null, JSON.parse(mindmap.getAttribute('data'))))</script>  ]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;structure&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#structure&quot;&gt;&lt;/a&gt; Structure&lt;/h3&gt;
+
+    &lt;div class=&quot;markmap-container&quot; style=&quot;height:300p</summary>
+      
+    
+    
+    
+    <category term="Cheatsheet" scheme="https://junfish.github.io/categories/Cheatsheet/"/>
+    
+    
+    <category term="Tmux" scheme="https://junfish.github.io/tags/Tmux/"/>
+    
+    <category term="Linux" scheme="https://junfish.github.io/tags/Linux/"/>
+    
+    <category term="SSH" scheme="https://junfish.github.io/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo 中常见错误及其解决方案</title>
