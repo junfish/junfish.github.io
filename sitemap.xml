@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://junfish.github.io/2022/05/25/common-conda-commands/</loc>
+    <loc>https://junfish.github.io/2022/05/24/common-tmux-commands/</loc>
     
     <lastmod>2022-05-25</lastmod>
     
   </url>
   
   <url>
-    <loc>https://junfish.github.io/2022/05/24/common-tmux-commands/</loc>
+    <loc>https://junfish.github.io/2021/09/15/practice-in-email-writing/</loc>
+    
+    <lastmod>2022-05-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/09/10/difference-between-multi-X-learning/</loc>
+    
+    <lastmod>2022-05-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/05/25/common-conda-commands/</loc>
     
     <lastmod>2022-05-25</lastmod>
     
@@ -19,13 +33,6 @@
     <loc>https://junfish.github.io/2021/07/26/preprocess-imagenet-ILSVRC2012/</loc>
     
     <lastmod>2022-05-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/2021/09/10/difference-between-multi-X-learning/</loc>
-    
-    <lastmod>2022-05-04</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://junfish.github.io/publications/index.html</loc>
     
     <lastmod>2022-03-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/2021/09/15/practice-in-email-writing/</loc>
-    
-    <lastmod>2022-03-25</lastmod>
     
   </url>
   
@@ -291,6 +291,20 @@
   </url>
   
   <url>
+    <loc>https://junfish.github.io/tags/E-mail/</loc>
+    <lastmod>2022-05-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/writing/</loc>
+    <lastmod>2022-05-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/tags/ImageNet/</loc>
     <lastmod>2022-05-25</lastmod>
     <changefreq>daily</changefreq>
@@ -306,20 +320,6 @@
   
   <url>
     <loc>https://junfish.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2022-05-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/E-mail/</loc>
-    <lastmod>2022-05-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/writing/</loc>
     <lastmod>2022-05-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -377,7 +377,7 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/categories/Machine-Learning/</loc>
+    <loc>https://junfish.github.io/categories/MachineLearning/</loc>
     <lastmod>2022-05-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -391,14 +391,14 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <loc>https://junfish.github.io/categories/WritingSkills/</loc>
     <lastmod>2022-05-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://junfish.github.io/categories/Writing-Skills/</loc>
+    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2022-05-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
