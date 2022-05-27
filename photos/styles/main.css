@@ -64,7 +64,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.0;
   color: #212529;
   text-align: left;
   background-color: #fff;
@@ -597,13 +597,14 @@ pre code {
 }
 
 .row {
+  margin-top: 10px;
+  margin-bottom: -20px;
+  margin-left: -600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .no-gutters {
@@ -618,7 +619,7 @@ pre code {
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
-.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
@@ -628,6 +629,11 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.col-sm-12 {
+  margin-top: -30px;
+  margin-left: -115px;
 }
 
 .col {
@@ -2515,8 +2521,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #917c55;
-  border-color: #917c55;
+  background-color: rgba(7, 25, 51, 0.91);
+  border-color: rgba(7, 25, 51, 0.91);
 }
 
 .btn-primary:hover {
@@ -2802,21 +2808,21 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #917c55;
+  color: rgba(7, 25, 51, 0.91);
   background-color: transparent;
   background-image: none;
-  border-color: #917c55;
+  border-color: rgba(7, 25, 51, 0.91);
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #917c55;
-  border-color: #917c55;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(145, 124, 85, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(145, 124, 85, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(6, 22, 45);
+          box-shadow: 0 0 0 0.2rem rgb(6, 22, 45);
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
@@ -9005,7 +9011,7 @@ a.text-dark:hover, a.text-dark:focus {
     min-width: 992px !important;
   }
   .container {
-    min-width: 992px !important;
+    min-width: 992px !important;container
   }
   .navbar {
     display: none;
@@ -9036,8 +9042,8 @@ body {
 
 .page {
   background: white;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1880px;
+  margin: 0px;
 }
 
 .navbar-brand {
@@ -9053,7 +9059,8 @@ body {
 }
 
 .pp-header {
-  padding-top: 3rem;
+  padding-top: 0rem;
+  margin-left: -230px;
 }
 
 .pp-header img {
@@ -9063,12 +9070,14 @@ body {
 }
 
 .pp-header h1 {
+  font-size: 28px;
   font-weight: 400;
 }
 
 .pp-header .navbar-nav {
   letter-spacing: 1px;
   font-family: 'Arimo', sans-serif;
+  margin-left: 400px;
   font-size: 18px;
   font-weight: 400;
 }
@@ -9080,9 +9089,11 @@ body {
 }
 
 /* Body Section  */
+
+
 .pp-category-filter a {
   display: inline-block;
-  margin: 0 10px 6px 0;
+  margin: 0 10px 6px 0px;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -9091,6 +9102,7 @@ body {
 
 .pp-gallery {
   min-height: 500px;
+  margin: 10px 20px 0px -120px;
 }
 
 .pp-gallery .card-columns .card {
