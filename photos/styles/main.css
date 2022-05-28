@@ -2521,38 +2521,38 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: rgba(7, 25, 51, 0.91);
-  border-color: rgba(7, 25, 51, 0.91);
+  background-color: rgb(6, 22, 45);
+  border-color: rgb(0, 0, 0);
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #796747;
-  border-color: #716142;
+  background-color: #104aa2;
+  border-color: #104aa2;
 }
 
 .btn-primary:focus, .btn-primary.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(145, 124, 85, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(145, 124, 85, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(0, 0, 0);
+          box-shadow: 0 0 0 0.2rem rgb(0, 0, 0);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #917c55;
-  border-color: #917c55;
+  background-color: #104aa2;
+  border-color: #104aa2;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #716142;
-  border-color: #695a3d;
+  background-color: #104aa2;
+  border-color: #104aa2;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(145, 124, 85, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(145, 124, 85, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(16, 74, 162);
+          box-shadow: 0 0 0 0.2rem rgb(16, 74, 162);
 }
 
 .btn-secondary {
@@ -2826,15 +2826,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #917c55;
+  color: #d7d9de;
   background-color: transparent;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #917c55;
-  border-color: #917c55;
+  background-color: #104aa2;
+  border-color: #104aa2;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
@@ -4025,7 +4025,7 @@ tbody.collapse.show {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 38px;
   line-height: inherit;
   white-space: nowrap;
 }
@@ -4898,13 +4898,13 @@ tbody.collapse.show {
 
 .badge-primary {
   color: #fff;
-  background-color: #917c55;
+  background-color: #ffffff;
 }
 
 .badge-primary[href]:hover, .badge-primary[href]:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #716142;
+  background-color: #ffffff;
 }
 
 .badge-secondary {
@@ -6133,13 +6133,13 @@ button.close {
 }
 
 .bg-primary {
-  background-color: #917c55 !important;
+  background-color: #ffffff !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #716142 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-secondary {
@@ -6261,7 +6261,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-  border-color: #917c55 !important;
+  border-color: #ffffff !important;
 }
 
 .border-secondary {
@@ -8882,7 +8882,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #917c55 !important;
+  color: #ffffff !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
