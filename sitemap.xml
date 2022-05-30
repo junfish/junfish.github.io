@@ -158,62 +158,6 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/tags/hexo/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/github/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/macintosh/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/comment-system/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/LeanCloud/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/Valine/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/plugins/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://junfish.github.io/tags/conda/</loc>
     <lastmod>2022-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -236,41 +180,6 @@
   
   <url>
     <loc>https://junfish.github.io/tags/commands/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/E-mail/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/writing/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/ImageNet/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/Preprocess/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
     <lastmod>2022-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -326,6 +235,76 @@
   </url>
   
   <url>
+    <loc>https://junfish.github.io/tags/comment-system/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/LeanCloud/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Valine/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/hexo/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/github/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/macintosh/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/plugins/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/E-mail/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/writing/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/tags/billiards/</loc>
     <lastmod>2022-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -334,6 +313,27 @@
   
   <url>
     <loc>https://junfish.github.io/tags/terminology/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/ImageNet/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Preprocess/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
     <lastmod>2022-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -377,6 +377,13 @@
   </url>
   
   <url>
+    <loc>https://junfish.github.io/categories/MachineLearning/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/</loc>
     <lastmod>2022-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -391,21 +398,14 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/categories/MachineLearning/</loc>
-    <lastmod>2022-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://junfish.github.io/categories/Recreation/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2022-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
