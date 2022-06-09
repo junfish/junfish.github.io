@@ -26,7 +26,7 @@
 <meta property="og:description" content="新建虚拟环境 12conda create --name my_env_name [python&#x3D;3.9] # Create the environment from scratchconda env create -f environment.yml # Create the environment from the environment.yml file   列出所有虚拟环境 1cond">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-05-25T06:17:45.000Z">
-<meta property="article:modified_time" content="2022-05-25T06:25:34.843Z">
+<meta property="article:modified_time" content="2022-06-09T20:47:42.664Z">
 <meta property="article:author" content="Jason Yu">
 <meta property="article:tag" content="conda">
 <meta property="article:tag" content="python">
@@ -441,7 +441,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/25/common-conda-commands/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 80(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 92(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -471,6 +471,10 @@
 <li>
 <p>导出虚拟环境</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env export &gt; environment.yml </span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>重建虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
