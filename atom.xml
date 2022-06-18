@@ -6,7 +6,7 @@
   <link href="https://junfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junfish.github.io/"/>
-  <updated>2022-06-09T20:47:42.664Z</updated>
+  <updated>2022-06-18T20:46:30.665Z</updated>
   <id>https://junfish.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cheat Sheet of Counting Files or Folders</title>
+    <link href="https://junfish.github.io/2022/06/18/counting-files-or-folders/"/>
+    <id>https://junfish.github.io/2022/06/18/counting-files-or-folders/</id>
+    <published>2022-06-18T20:30:55.000Z</published>
+    <updated>2022-06-18T20:46:30.665Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>显示当前文件夹下所有文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l | grep <span class="string">&quot;^-&quot;</span></span><br></pre></td></tr></table></figure></li><li><p>统计当前文件夹下文件个数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l ./|grep <span class="string">&quot;^-&quot;</span>|wc -l</span><br></pre></td></tr></table></figure></li><li><p>统计当前文件夹下文件夹个数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l ./|grep <span class="string">&quot;^d&quot;</span>|wc -l</span><br></pre></td></tr></table></figure></li><li><p>递归统计当前文件夹下所有文件个数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lR | grep <span class="string">&quot;^-&quot;</span>| wc -l</span><br></pre></td></tr></table></figure></li><li><p>递归统计当前文件夹下所有文件夹个数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lR | grep <span class="string">&quot;^d&quot;</span>| wc -l</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;显示当前文件夹下所有文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t</summary>
+      
+    
+    
+    
+    
+    <category term="commands" scheme="https://junfish.github.io/tags/commands/"/>
+    
+    <category term="linux" scheme="https://junfish.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Conda Cheat Sheet</title>
