@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Popular Datasets in SSL of CV | 淹死了的鱼的博客</title>
+  <meta name="description" content="Introduction This blog is an excerpt from my own paper 《A survey on pre-trained models in text, image and graph: powerful self-supervised deep learning via big data》 that targets introducing the powe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Popular Datasets in SSL of CV">
+<meta property="og:url" content="https://junfish.github.io/2021/07/07/popular-CV-dataset-intro/index.html">
+<meta property="og:site_name" content="Jason">
+<meta property="og:description" content="Introduction This blog is an excerpt from my own paper 《A survey on pre-trained models in text, image and graph: powerful self-supervised deep learning via big data》 that targets introducing the powe">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-07-07T17:49:38.000Z">
+<meta property="article:modified_time" content="2022-08-25T02:09:34.882Z">
+<meta property="article:author" content="Jason Yu">
+<meta property="article:tag" content="PTM">
+<meta property="article:tag" content="SSL">
+<meta property="article:tag" content="benchmark datasets">
+<meta property="article:tag" content="CV">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://junfish.github.io/2021/07/07/popular-CV-dataset-intro/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/jason_favicon.ico" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://junfish.github.io/about" target="_blank">
+          <img class="img-circle img-rotate" src="/images/watermelon.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jason</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">CREAM</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Jinan, China; Wuxi, China; Bethlehem, U.S.</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-publications">
+          <a href="/publications">
+            
+            <i class="icon icon-papers"></i>
+            
+            <span class="menu-title">Publications</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-travels">
+          <a href="/travels/index.html">
+            
+            <i class="icon icon-plane"></i>
+            
+            <span class="menu-title">Travels</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/index.html">
+            
+            <i class="icon icon-photo"></i>
+            
+            <span class="menu-title">Photos</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-code_lib"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-books"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies">
+            
+            <i class="icon icon-movies"></i>
+            
+            <span class="menu-title">Movies</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-links"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-aboutme"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/junfish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/images/wechat.JPG" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="/images/TIM.JPG" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+<!-- </header> -->
+
+<!-- 元宵节双边灯笼样式开始 -->
+<style>
+    @media only screen and (min-width: 1124px) {
+        .nav-menu {
+            padding-right: 96px;
+        }
+    }
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+        .right {
+            float: left!important;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .right {
+            float: left!important;
+        }
+    }
+    .deng-box {
+        position: fixed;
+       /* top: -30px; */
+        top: 13px;
+        right: -20px;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: 13px;
+        /* right: 10px; */
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        /* top: -20px; */
+        top: -69px;
+        left: 60px;
+        width: 2px;
+        /*  height: 20px; */
+        height: 70px;
+
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    @font-face {
+        font-family: "华文行楷";
+        src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
+    }
+    .deng-t {
+        font-family: 华文行楷;
+        font-size: 26px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+                -moz-transform: rotate(-10deg)
+        }
+        50% {
+             -moz-transform: rotate(10deg)
+        }
+        100% {
+                -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+                -webkit-transform: rotate(-10deg)
+        }
+        50% {
+                -webkit-transform: rotate(10deg)
+        }
+        100% {
+                -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+<div class="denglong" id="chunjie">
+<div class="deng-box">
+    <div class="deng">
+        <div class="xian"></div>
+        <div class="deng-a">
+            <div class="deng-b"><div class="deng-t">喜迎</div></div>
+        </div>
+        <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+    </div>
+</div>
+<div class="deng-box1">
+    <div class="deng">
+        <div class="xian"></div>
+        <div class="deng-a">
+            <div class="deng-b"><div class="deng-t">元宵</div></div>
+        </div>
+        <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+    </div>
+</div>
+
+</header>
+<script>
+    if((new Date().getMonth()) > 1){
+        $('.denglong').css('display', 'none');
+    }else{
+        $('.denglong').css('display', 'block');
+    }
+</script>
+<!-- 元宵节双边灯笼样式结束 -->
+
+<!-- 元宵节单边灯笼样式开始 -->
+<!-- <style> -->
+<!--     @media only screen and (min-width: 1124px) { -->
+<!--         .nav-menu { -->
+<!--             padding-right: 96px; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (max-width: 760px) { -->
+<!--         .deng-box, .deng-box1 { -->
+<!--             width: 40%; -->
+<!--         } -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (min-width: 768px) and (max-width: 1024px) { -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     .deng-box { -->
+<!--         position: fixed; -->
+<!--        /* top: -30px; */ -->
+<!--         top: 13px; -->
+<!--         right: -20px; -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 { -->
+<!--         position: fixed; -->
+<!--         top: 13px; -->
+<!--         /* right: 10px; */ -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 5s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1); -->
+<!--     } -->
+<!--     .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 3s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1); -->
+<!--     } -->
+<!--     .deng-a { -->
+<!--         width: 100px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: 12px 8px 8px 10px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .deng-b { -->
+<!--         width: 45px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: -4px 8px 8px 26px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .xian { -->
+<!--         position: absolute; -->
+<!--         /* top: -20px; */ -->
+<!--         top: -69px; -->
+<!--         left: 60px; -->
+<!--         width: 2px; -->
+<!--         /*  height: 20px; */ -->
+<!--         height: 70px; -->
+
+<!--         background: #dc8f03; -->
+<!--     } -->
+<!--     .shui-a { -->
+<!--         position: relative; -->
+<!--         width: 5px; -->
+<!--         height: 20px; -->
+<!--         margin: -5px 0 0 59px; -->
+<!--         -webkit-animation: swing 4s infinite ease-in-out; -->
+<!--         -webkit-transform-origin: 50% -45px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--     } -->
+<!--     .shui-b { -->
+<!--         position: absolute; -->
+<!--         top: 14px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 10px; -->
+<!--         background: #dc8f03; -->
+<!--         border-radius: 50%; -->
+<!--     } -->
+<!--     .shui-c { -->
+<!--         position: absolute; -->
+<!--         top: 18px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 35px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 0 5px; -->
+<!--     } -->
+<!--     .deng:before { -->
+<!--         position: absolute; -->
+<!--         top: -7px; -->
+<!--         left: 29px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         z-index: 999; -->
+<!--         border-radius: 5px 5px 0 0; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     .deng:after { -->
+<!--         position: absolute; -->
+<!--         bottom: -7px; -->
+<!--         left: 10px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         margin-left: 20px; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     @font-face { -->
+<!--         font-family: "华文行楷"; -->
+<!--         src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf'); -->
+<!--     } -->
+<!--     .deng-t { -->
+<!--         font-family: 华文行楷; -->
+<!--         font-size: 26px; -->
+<!--         color: #dc8f03; -->
+<!--         font-weight: bold; -->
+<!--         line-height: 44px; -->
+<!--         text-align: center; -->
+<!--     } -->
+<!--     .night .deng-t, -->
+<!--     .night .deng-box, -->
+<!--     .night .deng-box1 { -->
+<!--         background: transparent !important; -->
+<!--     } -->
+<!--     @-moz-keyframes swing { -->
+<!--         0% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--              -moz-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!--     @-webkit-keyframes swing { -->
+<!--         0% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--                 -webkit-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!-- </style> -->
+
+<!-- <style> -->
+<!--     @media only screen and (min-width: 1124px) { -->
+<!--         .nav-menu { -->
+<!--             padding-right: 96px; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (max-width: 760px) { -->
+<!--         .deng-box, .deng-box1 { -->
+<!--             width: 40%; -->
+<!--         } -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (min-width: 768px) and (max-width: 1024px) { -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     .deng-box { -->
+<!--         position: fixed; -->
+<!--         top: -40px; -->
+<!--         right: -20px; -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 { -->
+<!--         position: fixed; -->
+<!--         top: -30px; -->
+<!--         right: 10px; -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 5s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1); -->
+<!--     } -->
+<!--     .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 3s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1); -->
+<!--     } -->
+<!--     .deng-a { -->
+<!--         width: 100px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: 12px 8px 8px 10px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .deng-b { -->
+<!--         width: 45px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: -4px 8px 8px 26px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .xian { -->
+<!--         position: absolute; -->
+<!--         top: -20px; -->
+<!--         left: 60px; -->
+<!--         width: 2px; -->
+<!--         height: 20px; -->
+<!--         background: #dc8f03; -->
+<!--     } -->
+<!--     .shui-a { -->
+<!--         position: relative; -->
+<!--         width: 5px; -->
+<!--         height: 20px; -->
+<!--         margin: -5px 0 0 59px; -->
+<!--         -webkit-animation: swing 4s infinite ease-in-out; -->
+<!--         -webkit-transform-origin: 50% -45px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--     } -->
+<!--     .shui-b { -->
+<!--         position: absolute; -->
+<!--         top: 14px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 10px; -->
+<!--         background: #dc8f03; -->
+<!--         border-radius: 50%; -->
+<!--     } -->
+<!--     .shui-c { -->
+<!--         position: absolute; -->
+<!--         top: 18px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 35px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 0 5px; -->
+<!--     } -->
+<!--     .deng:before { -->
+<!--         position: absolute; -->
+<!--         top: -7px; -->
+<!--         left: 29px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         z-index: 999; -->
+<!--         border-radius: 5px 5px 0 0; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     .deng:after { -->
+<!--         position: absolute; -->
+<!--         bottom: -7px; -->
+<!--         left: 10px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         margin-left: 20px; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     @font-face { -->
+<!--         font-family: "华文行楷"; -->
+<!--         src: url('/fonts/华文行楷.ttf'); -->
+<!--     } -->
+<!--     .deng-t { -->
+<!--         font-family: 华文行楷; -->
+<!--         font-size: 26px; -->
+<!--         color: #dc8f03; -->
+<!--         font-weight: bold; -->
+<!--         line-height: 44px; -->
+<!--         text-align: center; -->
+<!--     } -->
+<!--     .night .deng-t, -->
+<!--     .night .deng-box, -->
+<!--     .night .deng-box1 { -->
+<!--         background: transparent !important; -->
+<!--     } -->
+<!--     @-moz-keyframes swing { -->
+<!--         0% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--              -moz-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!--     @-webkit-keyframes swing { -->
+<!--         0% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--                 -webkit-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!-- </style> -->
+<!-- <div class="denglong" id="chunjie"> -->
+<!-- <div class="deng-box"> -->
+<!--     <div class="deng"> -->
+<!--         <div class="xian"></div> -->
+<!--         <div class="deng-a"> -->
+<!--             <div class="deng-b"><div class="deng-t">喜迎</div></div> -->
+<!--         </div> -->
+<!--         <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="deng-box1"> -->
+<!--     <div class="deng"> -->
+<!--         <div class="xian"></div> -->
+<!--         <div class="deng-a"> -->
+<!--             <div class="deng-b"><div class="deng-t">春节</div></div> -->
+<!--         </div> -->
+<!--         <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- </header> -->
+
+<!-- <script> -->
+<!--     if((new Date().getMonth()) > 1){ -->
+<!--         $('.denglong').css('display', 'none'); -->
+<!--     }else{ -->
+<!--         $('.denglong').css('display', 'block'); -->
+<!--     } -->
+<!-- </script> -->
+<!-- 元宵节单边灯笼样式结束 -->
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>One paper titled "Tensor-Based Multi-Modal Multi-Target Regression for Alzheimer’s Disease Prediction" is accepted by IEEE BIBM 2022!</p> <p>One paper titled "Unified Image Aesthetic and Emotional Prediction Based on Deep Multi-task Learning" is accepted by Journal of Software 2022!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      <div class="widget">
+    <h3 class="widget-title">Visiting Map</h3>
+    <div class="widget-body">
+        <div id="map">
+            <div id="visiting_map" style="width: 290px;height: 180px;">
+                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=drzP7tjzZqBa-_M3UIJUj14cI-CcbSIxdCAM7NEGIfU&cl=ffffff&w=a"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Cheatsheet/">Cheatsheet</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Debugging/">Debugging</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MachineLearning/">MachineLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Recreation/">Recreation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WritingSkills/">WritingSkills</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E4%BD%9C%E6%96%87/">小作文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/">站点建设</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Calculus/" style="font-size: 13px;">Calculus</a> <a href="/tags/Cheatsheet/" style="font-size: 13px;">Cheatsheet</a> <a href="/tags/E-mail/" style="font-size: 13px;">E-mail</a> <a href="/tags/GPU/" style="font-size: 13px;">GPU</a> <a href="/tags/ImageNet/" style="font-size: 13px;">ImageNet</a> <a href="/tags/LeanCloud/" style="font-size: 13px;">LeanCloud</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matrix/" style="font-size: 13px;">Matrix</a> <a href="/tags/Multi-X-Learning/" style="font-size: 13px;">Multi-X Learning</a> <a href="/tags/Multi-class/" style="font-size: 13px;">Multi-class</a> <a href="/tags/Multi-instance/" style="font-size: 13px;">Multi-instance</a> <a href="/tags/Multi-label/" style="font-size: 13px;">Multi-label</a> <a href="/tags/Multi-source/" style="font-size: 13px;">Multi-source</a> <a href="/tags/Multi-task/" style="font-size: 13px;">Multi-task</a> <a href="/tags/Multi-view/" style="font-size: 13px;">Multi-view</a> <a href="/tags/Nvidia/" style="font-size: 13px;">Nvidia</a> <a href="/tags/PTM/" style="font-size: 13px;">PTM</a> <a href="/tags/Preprocess/" style="font-size: 13px;">Preprocess</a> <a href="/tags/SSH/" style="font-size: 13px;">SSH</a> <a href="/tags/SSL/" style="font-size: 13px;">SSL</a> <a href="/tags/Tmux/" style="font-size: 13px;">Tmux</a> <a href="/tags/Valine/" style="font-size: 13px;">Valine</a> <a href="/tags/benchmark-datasets/" style="font-size: 13px;">benchmark datasets</a> <a href="/tags/billiards/" style="font-size: 13px;">billiards</a> <a href="/tags/commands/" style="font-size: 13.5px;">commands</a> <a href="/tags/comment-system/" style="font-size: 13px;">comment system</a> <a href="/tags/conda/" style="font-size: 13px;">conda</a> <a href="/tags/derivative/" style="font-size: 13px;">derivative</a> <a href="/tags/driver/" style="font-size: 13px;">driver</a> <a href="/tags/github/" style="font-size: 13px;">github</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/linux/" style="font-size: 13px;">linux</a> <a href="/tags/macintosh/" style="font-size: 13px;">macintosh</a> <a href="/tags/plugins/" style="font-size: 13px;">plugins</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/terminology/" style="font-size: 13px;">terminology</a> <a href="/tags/virtual-environment/" style="font-size: 13px;">virtual environment</a> <a href="/tags/writing/" style="font-size: 13px;">writing</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/" style="font-size: 13px;">个人感悟</a> <a href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">评论系统</a> <a href="/tags/%E9%A2%84%E5%A4%84%E7%90%86/" style="font-size: 13px;">预处理</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B0%8F%E4%BD%9C%E6%96%87/">小作文</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/04/share-my-experience/" class="title">应大学本科导员孙朋朋老师邀约给大二学子分享经验</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-04T18:33:10.000Z" itemprop="datePublished">2022-10-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Debugging/">Debugging</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/23/nvidia-driver-mismatch/" class="title">Failed to initialize NVML: Driver/library version mismatch</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-23T20:12:13.000Z" itemprop="datePublished">2022-09-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/MachineLearning/">MachineLearning</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/24/matrix-calculus/" class="title">The Matrix Calculus</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-25T02:03:22.000Z" itemprop="datePublished">2022-08-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/03/common-markdown-commands/" class="title">Markdown Grammer Cheat Sheet</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-04T03:58:37.000Z" itemprop="datePublished">2022-08-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Cheatsheet/">Cheatsheet</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/18/counting-files-or-folders/" class="title">Cheat Sheet of Counting Files or Folders</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-18T20:30:55.000Z" itemprop="datePublished">2022-06-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#introduction"><span class="toc-number">1.</span> <span class="toc-text"> Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#classification"><span class="toc-number">1.1.</span> <span class="toc-text"> Classification</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#detection"><span class="toc-number">1.2.</span> <span class="toc-text"> Detection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#segmentation"><span class="toc-number">1.3.</span> <span class="toc-text"> Segmentation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#others"><span class="toc-number">1.4.</span> <span class="toc-text"> Others</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">2.</span> <span class="toc-text"> Reference</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-popular-CV-dataset-intro" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Popular Datasets in SSL of CV
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/07/07/popular-CV-dataset-intro/" class="article-date">
+	  <time datetime="2021-07-07T17:49:38.000Z" itemprop="datePublished">2021-07-07</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/PTM/" rel="tag">PTM</a>, <a class="article-tag-link-link" href="/tags/SSL/" rel="tag">SSL</a>, <a class="article-tag-link-link" href="/tags/benchmark-datasets/" rel="tag">benchmark datasets</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2021/07/07/popular-CV-dataset-intro/" class="leancloud_visitors"  data-flag-title="Popular Datasets in SSL of CV">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/07/popular-CV-dataset-intro/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2.7k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 17(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
+<p>This blog is an excerpt from my own paper 《A survey on pre-trained models in text, image and graph: powerful self-supervised deep learning via big data》 that targets introducing the powerful pre-trained model (PTM) in Self-Supervised Learning (SSL) era. This blog serves as a synopsis of benchmark datasets in SSL in computer vision (CV).</p>
+<h4 id="classification"><a class="markdownIt-Anchor" href="#classification"></a> Classification</h4>
+<p>The <strong>MNIST</strong><sup><a href="#1-ref">[1]</a></sup> is a database of handwritten digits containing <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">60,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> training examples and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">10,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> testing examples. The images are fixed-size with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>28</mn><mo>×</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">28\times28</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">8</span></span></span></span> pixels. The pixel values are from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>255.0</mn></mrow><annotation encoding="application/x-tex">255.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mord">5</span><span class="mord">.</span><span class="mord">0</span></span></span></span> in which pixel values smaller than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>255.0</mn></mrow><annotation encoding="application/x-tex">255.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mord">5</span><span class="mord">.</span><span class="mord">0</span></span></span></span> can be understood as background (white) and 255 means foreground (black). The labels are from 0 to 9 and only one of these digits exists in an image. Both traditional and deep learning methods are based on this most popular dataset despite advanced methods showing perfect results. Thus, Geoffrey Hinton has described it as “the drosophila of machine learning”.</p>
+<p>Also in the domain of digit number, The Street View House Numbers (<strong>SVHN</strong>)<sup><a href="#2-ref">[2]</a></sup> dataset collects real-world digit numbers from house numbers in Google Street View images. There are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>73</mn><mo separator="true">,</mo><mn>257</mn></mrow><annotation encoding="application/x-tex">73,257</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">7</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mord">7</span></span></span></span> digits for training, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>26</mn><mo separator="true">,</mo><mn>032</mn></mrow><annotation encoding="application/x-tex">26,032</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">3</span><span class="mord">2</span></span></span></span> digits for testing, and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>531</mn><mo separator="true">,</mo><mn>131</mn></mrow><annotation encoding="application/x-tex">531,131</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mord">3</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">1</span></span></span></span> additional, and all of them are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">32\times32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">2</span></span></span></span> color images with both class labels and character level bounding boxes.</p>
+<p>As more advanced methods show perfect results on simple dataset, more sophisticated dataset such as <strong>CIFAR-10</strong>/<strong>CIFAR-100</strong><sup><a href="#3-ref">[3]</a></sup> are conducted. These two datasets are more close to the real-world object. The CIFAR-10 consists of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">50,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> training images and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">10,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> testing images, with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">6,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images per class and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">32\times32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">2</span></span></span></span> pixels in each RGB colour image. The CIFAR-100 is similar to the CIFAR-10 but with more detailed label information. There are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> classes containing <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>500</mn></mrow><annotation encoding="application/x-tex">500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span></span></span></span> training images and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> testing images in each class. In addition, these <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> “fine” classes are grouped equally into <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> “coarse” classes. Researchers can adapt it to suitable learning methods.</p>
+<p>Inspired by the CIFAR-10 dataset, **STL-10<sup><a href="#4-ref">[4]</a></sup> is another <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>96</mn><mo>×</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">96\times96</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">9</span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span><span class="mord">6</span></span></span></span> color image dataset containing similar <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> real-world classes. Each class has <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>500</mn></mrow><annotation encoding="application/x-tex">500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span></span></span></span> training images and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>800</mn></mrow><annotation encoding="application/x-tex">800</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span></span></span></span> test images. The biggest difference is that STL-10 has <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">100,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> unlabeled images for unsupervised learning. More construction information can be seen in <sup><a href="#5-ref">[5]</a></sup>.</p>
+<p><strong>Caltech-101</strong><sup><a href="#6-ref">[6]</a></sup> collects roughly <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>300</mn><mo>×</mo><mn>200</mn></mrow><annotation encoding="application/x-tex">300\times200</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span></span></span></span> color images of objects belonging to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>101</mn></mrow><annotation encoding="application/x-tex">101</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span></span></span></span> categories, with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>800</mn></mrow><annotation encoding="application/x-tex">800</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images per category and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> on average. The outlines of the objects in the pictures are annotated for the convenience of different learning methods.</p>
+<p><strong>ImageNet</strong><sup><a href="#7-ref">[7]</a></sup> is one of the most popular and large-scale dataset on computer vision. It is built according to the hierarchical structure of WordNet<sup><a href="#8-ref">[8]</a></sup>. The full ImageNet dataset contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>14</mn><mo separator="true">,</mo><mn>197</mn><mo separator="true">,</mo><mn>122</mn></mrow><annotation encoding="application/x-tex">14,197,122</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">2</span></span></span></span> images and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>21</mn><mo separator="true">,</mo><mn>841</mn></mrow><annotation encoding="application/x-tex">21,841</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mord">4</span><span class="mord">1</span></span></span></span> synsets indexed, attaching on average <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">1,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images to illustrate each synset. The most frequently-used subset of ImageNet is the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) dataset from 2010 to 2017, containing tasks of classification, localization, and detection. The number of samples in training and testing datasets and the labels of images is determined by the specific task, more details are seen in <sup><a href="#9-ref">[9]</a></sup>.</p>
+<p>In addition to the popular MNIST, there still exist many domain datasets used for the downstream tasks in the classification problem.<br />
+<strong>HMDB51</strong><sup><a href="#10-ref">[10]</a></sup><sup><a href="#11-ref">[11]</a></sup> is an action video database for a total of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">7,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> clips in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>51</mn></mrow><annotation encoding="application/x-tex">51</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">1</span></span></span></span> action classes. It contains five types of facial actions and body movements. <strong>UCF101</strong><sup><a href="#12-ref">[12]</a></sup> is another action video data set designed for the more realistic action recognition. It is an extension of <strong>UCF50</strong><sup><a href="#13-ref">[13]</a></sup> data set containing only 50 action categories with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>101</mn></mrow><annotation encoding="application/x-tex">101</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span></span></span></span> action categories, collected from YouTube. What makes it a famous recognition dataset is the workshop in ICCV13 with UCF101 as its main competition benchmark. <strong>Food-101</strong><sup><a href="#14-ref">[14]</a></sup> is a real-world food dataset of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>101</mn></mrow><annotation encoding="application/x-tex">101</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span></span></span></span> food categories, with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>750</mn></mrow><annotation encoding="application/x-tex">750</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">5</span><span class="mord">0</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>250</mn></mrow><annotation encoding="application/x-tex">250</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mord">0</span></span></span></span> images per class in training and testing dataset respectively. <strong>Birdsnap</strong><sup><a href="#15-ref">[15]</a></sup> is a large-scale fine-grained visual categorization of birds, with bounding boxes and the locations/annotations of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>17</mn></mrow><annotation encoding="application/x-tex">17</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">7</span></span></span></span> parts in the object. It contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>49</mn><mo separator="true">,</mo><mn>829</mn></mrow><annotation encoding="application/x-tex">49,829</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">4</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mord">2</span><span class="mord">9</span></span></span></span> images of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>500</mn></mrow><annotation encoding="application/x-tex">500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span></span></span></span> most common species in North American, with each species containing <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>69</mn></mrow><annotation encoding="application/x-tex">69</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">9</span></span></span></span> to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images and most species having <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span>. In addition, some images are also labeled as male or female, immature or adult, and breeding or non-breeding plumage. To target the scene categorization, the extensive Scene UNderstanding (<strong>SUN</strong>)<sup><a href="#16-ref">[16]</a></sup><sup><a href="#17-ref">[17]</a></sup> database fills the gap of the existing dataset with the limited scope of categories. This database contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>899</mn></mrow><annotation encoding="application/x-tex">899</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">9</span><span class="mord">9</span></span></span></span> categories and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>130</mn><mo separator="true">,</mo><mn>519</mn></mrow><annotation encoding="application/x-tex">130,519</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mord">1</span><span class="mord">9</span></span></span></span> images, and only images with more than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>200</mn><mo>×</mo><mn>200</mn></mrow><annotation encoding="application/x-tex">200\times200</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span></span></span></span> pixels were kept. <strong>SUN397</strong> is a more well-sampled subset that maintains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>397</mn></mrow><annotation encoding="application/x-tex">397</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">9</span><span class="mord">7</span></span></span></span> categories with at least <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images per category, in which other categories containing relatively few unique photographs are discarded. <strong>Places205</strong><sup><a href="#18-ref">[18]</a></sup> dataset is another large scale scene dataset consists of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>448</mn><mo separator="true">,</mo><mn>873</mn></mrow><annotation encoding="application/x-tex">2,448,873</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">4</span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mord">7</span><span class="mord">3</span></span></span></span> images from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>205</mn></mrow><annotation encoding="application/x-tex">205</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">5</span></span></span></span> scene categories. <strong>Cars</strong><sup><a href="#19-ref">[19]</a></sup> dataset in the domain of cars contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>16</mn><mo separator="true">,</mo><mn>185</mn></mrow><annotation encoding="application/x-tex">16,185</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">8</span><span class="mord">5</span></span></span></span> color images of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>196</mn></mrow><annotation encoding="application/x-tex">196</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mord">6</span></span></span></span> classes (at the level of Make, Model, Year) of cars. For convenience, this dataset is split into training and test set in roughly equal quantities. <strong>Aircraft</strong><sup><a href="#20-ref">[20]</a></sup> is another fine-grained visual classification designed for aircraft (also known as FGVC-Aircraft). A popular form of this dataset is the fine-grained recognition challenge 2013 (FGComp2013)<sup><a href="#21-ref">[21]</a></sup> ran in parallel with the ILSVRC2013. There exist four-level hierarchy: Model, Variant, Family, Manufacturer, from finer to coarser to organize this database. The more detailed information is shown in <sup><a href="#22-ref">[22]</a></sup>. <strong>Pets</strong><sup><a href="#23-ref">[23]</a></sup> represents The Oxford-IIIT Pet Dataset that collects <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>37</mn></mrow><annotation encoding="application/x-tex">37</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">7</span></span></span></span> pet categories with roughly <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>200</mn></mrow><annotation encoding="application/x-tex">200</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images per category. All images have an associated ground truth annotation of breed for classification, head ROI for detection, and pixel-level trimap for segmentation. Similarly, <strong>Flowers</strong><sup><a href="#24-ref">[24]</a></sup> is another domain dataset in flowers also collected by Oxford; it contains Oxford-17 Flowers of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>17</mn></mrow><annotation encoding="application/x-tex">17</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">7</span></span></span></span> categories and Oxford-102 Flowers of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>102</mn></mrow><annotation encoding="application/x-tex">102</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">2</span></span></span></span> categories. The Describable Textures Dataset (<strong>DTD</strong>)<sup><a href="#25-ref">[25]</a></sup> is an evolving collection of textural images in the wild, which consists of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mo separator="true">,</mo><mn>640</mn></mrow><annotation encoding="application/x-tex">5,640</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mord">4</span><span class="mord">0</span></span></span></span> images of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>47</mn></mrow><annotation encoding="application/x-tex">47</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">7</span></span></span></span> categories, with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>120</mn></mrow><annotation encoding="application/x-tex">120</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">0</span></span></span></span> images per category. <strong>iNaturallist2018</strong><sup><a href="#26-ref">[26]</a></sup> is a large-scale species classification competition conducted on the FGVC5 workshop at CVPR2018. This dataset contains over <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>8</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">8,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> species categories, with more than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>450</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">450,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">4</span><span class="mord">5</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images in the training and validation dataset collected from iNaturalist<sup><a href="#27-ref">[27]</a></sup>.</p>
+<h4 id="detection"><a class="markdownIt-Anchor" href="#detection"></a> Detection</h4>
+<p><strong>COCO</strong><sup><a href="#28-ref">[28]</a></sup> is a large-scale data set for object detection, segmentation, and caption; it contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>330</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">330,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">3</span><span class="mord">3</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> rgb images, with more than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>200</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">200,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> labelled. There are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1.5</mn></mrow><annotation encoding="application/x-tex">1.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">5</span></span></span></span> million​ object instances of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>80</mn></mrow><annotation encoding="application/x-tex">80</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">0</span></span></span></span> object categories involved. Thus, it is one of the most popular benchmark data set in detection and segmentation in parallel with the following PASCAL VOC.</p>
+<p>The PASCAL VOC project<sup><a href="#29-ref">[29]</a></sup> provides standardized image datasets for object class recognition and also has run challenges evaluating performance on object class recognition from 2005 to 2012. The main datasets used in self-supervised learning are VOC07, VOC11, and VOC12. Main competitions in <strong>VOC07</strong><sup><a href="#30-ref">[30]</a></sup> contains classification and detection tasks; both of them consist of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> objects and contain at least one object in each image. Thus, it is common to use VOC07 serving as the downstream task for the detection.</p>
+<h4 id="segmentation"><a class="markdownIt-Anchor" href="#segmentation"></a> Segmentation</h4>
+<p>Both <strong>VOC11</strong><sup><a href="#31-ref">[31]</a></sup> and <strong>VOC12</strong><sup><a href="#32-ref">[32]</a></sup> contains classification, detection, and segmentation tasks in the main competition, thus leading to the common use of down stream task for the segmentation.</p>
+<p><strong>ADE20K</strong><sup><a href="#33-ref">[33]</a></sup><sup><a href="#34-ref">[34]</a></sup> collects <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>27</mn><mo separator="true">,</mo><mn>574</mn></mrow><annotation encoding="application/x-tex">27,574</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mord">7</span><span class="mord">4</span></span></span></span> images from both the SUN and Places205 databases, in which <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>25</mn><mo separator="true">,</mo><mn>574</mn></mrow><annotation encoding="application/x-tex">25,574</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mord">7</span><span class="mord">4</span></span></span></span> for training and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">2,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> for testing. All <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>707</mn><mo separator="true">,</mo><mn>868</mn></mrow><annotation encoding="application/x-tex">707,868</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">7</span><span class="mord">0</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mord">6</span><span class="mord">8</span></span></span></span> objects from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo separator="true">,</mo><mn>688</mn></mrow><annotation encoding="application/x-tex">3,688</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mord">8</span><span class="mord">8</span></span></span></span> categories existing in images are annotated. Especially, this dataset contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>193</mn><mo separator="true">,</mo><mn>238</mn></mrow><annotation encoding="application/x-tex">193,238</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">3</span><span class="mord">8</span></span></span></span> annotated object parts and parts of parts, and additional attributes, annotation time, depth ordering for the benefit of research community.</p>
+<p>The <strong>NYU-Depth V2</strong><sup><a href="#35-ref">[35]</a></sup> is a dataset consists of images and video sequences from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>464</mn></mrow><annotation encoding="application/x-tex">464</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">6</span><span class="mord">4</span></span></span></span> indoor scenes that are recorded by both the RGB and Depth cameras from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> cities. It contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>449</mn></mrow><annotation encoding="application/x-tex">1,449</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">4</span><span class="mord">9</span></span></span></span> images with the ground truth of depth, and the original RGB values are also provided. In addition, there are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>407</mn><mo separator="true">,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">407,024</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">2</span><span class="mord">4</span></span></span></span> new unlabeled frames and additional class labels for the objects in images.</p>
+<p><strong>Cityscapes</strong><sup><a href="#36-ref">[36]</a></sup><sup><a href="#37-ref">[37]</a></sup> is a dataset of urban street scenes from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> cities with the ground truth of semantic segmentation. The main instances are vehicles, people, and construction. The high-quality dense pixel annotations contain a volume of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">5,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images. In addition to the fine annotations, coarser polygonal annotations are provided for a set of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">20,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images. Moreover, the videos consist of not consistent images with high-quality annotations, and these annotated images with consistent changing views are provided for researchers.</p>
+<p><strong>LVIS</strong><sup><a href="#38-ref">[38]</a></sup> is dataset for large vocabulary instance segmentation. It features that 1) a category or word in one image is related to the only segmentation object; 2) more than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>200</mn></mrow><annotation encoding="application/x-tex">1,200</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span></span></span></span> categories are extracted from roughly <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>160</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">160,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> images; 3) long tails phenomenon exist in these categories; and 4) more than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">2,000,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> high-quality instance segmentation masks.</p>
+<p>Densely Annotated VIdeo Segmentation (DAVIS)<sup><a href="#39-ref">[39]</a></sup> is a video dataset designed for the in-depth analysis of the SOTA in video object segmentation, in which <strong>DAVIS 2017</strong><sup><a href="#40-ref">[40]</a></sup> contains both semi-supervised (human-guided at test time) and unsupervised (human non-guided at test time) video sequences with multiple annotated instances.</p>
+<h4 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h4>
+<p><strong>Paris StreetView</strong> dataset<sup><a href="#41-ref">[41]</a></sup> is designed for image inpainting task, which contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>14</mn><mo separator="true">,</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">14,900</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">9</span><span class="mord">0</span><span class="mord">0</span></span></span></span> training images and 100 test images collected from street views of Paris. This dataset is collected from Google Street View and mainly focuses on the buildings in the city.</p>
+<p>Based on MNIST, <strong>Moving-MNIST</strong><sup><a href="#42-ref">[42]</a></sup> is a video dataset designed for evaluating sequence prediction or reconstruction, which contains <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">10,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> sequences. Each video is long of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> frames and consisted of two digits (possibly overlapped) moving inside a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>64</mn><mo>×</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">64\times64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span> patch. The first benchmark is reported on <a href="#43-ref">[43]</a> by the method of LSTMs.</p>
+<p>Yahoo Flickr Creative Commons <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> Million (<strong>YFCC100M</strong>) dataset<sup><a href="#44-ref">[44]</a></sup><sup><a href="#45-ref">[45]</a></sup> is the largest public multimedia collection that is allowed to search by users for their own targets; this dataset can browse both images and videos. It is free and for researchers to explore and investigate subsets of the YFCC100M in real-time. Subsets of the complete dataset can be retrieved by any keyword searching and reviewed directly. In addition, the text information attached to any image or video is abundant, such as containing location information and user tags. Briefly，it is more a multimedia library than a domain dataset.</p>
+<p>More generalized dataset concept in self-supervised learning era is composed of multimedia website, APP, or search engine such as \textbf{Instagram}, Flickr, Google Images, etc. I think pictures in the wild will play a major role in the future study in CV because of the quantity of data, the computation source, and the learning power of PTM.</p>
+<h3 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h3>
+<div id="1-ref"></div>
+<p>[1] <a target="_blank" rel="noopener" href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>.</p>
+<div id="2-ref"></div>
+<p>[2] <a target="_blank" rel="noopener" href="http://ufldl.stanford.edu/housenumbers/">http://ufldl.stanford.edu/housenumbers/</a>.</p>
+<div id="3-ref"></div>
+<p>[3] <a target="_blank" rel="noopener" href="https://www.cs.toronto.edu/~kriz/index.html">https://www.cs.toronto.edu/~kriz/index.html</a>.</p>
+<div id="4-ref"></div>
+<p>[4] A. Coates, A. Ng, and H. Lee, “An analysis of single-layer networks in unsupervised feature learning,” in Proceedings of the fourteenth international conference on artificial intelligence and statistics, pp. 215–223, JMLR Workshop and Conference Proceedings, 2011.</p>
+<div id="5-ref"></div>
+<p>[5] <a target="_blank" rel="noopener" href="https://cs.stanford.edu/~acoates/stl10/">https://cs.stanford.edu/~acoates/stl10/</a>.</p>
+<div id="6-ref"></div>
+<p>[6] <a target="_blank" rel="noopener" href="http://www.vision.caltech.edu/Image_Datasets/Caltech101/">http://www.vision.caltech.edu/Image_Datasets/Caltech101/</a>.</p>
+<div id="7-ref"></div>
+<p>[7] J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, and L. Fei-Fei, “Imagenet: A large-scale hierarchical image database,” in 2009 IEEE conference on computer vision and pattern recognition, pp. 248–255, Ieee, 2009.</p>
+<div id="8-ref"></div>
+<p>[8] G. A. Miller, WordNet: An electronic lexical database. MIT press, 1998.</p>
+<div id="9-ref"></div>
+<p>[9] <a target="_blank" rel="noopener" href="https://image-net.org/">https://image-net.org/</a>.</p>
+<div id="10-ref"></div>
+<p>[10] H. Kuehne, H. Jhuang, E. Garrote, T. Poggio, and T. Serre, “HMDB: a large video database for human motion recognition,” in Proceedings of the International Conference on Computer Vision (ICCV), 2011.</p>
+<div id="11-ref"></div>
+<p>[11] <a target="_blank" rel="noopener" href="https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/">https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/</a>.</p>
+<div id="12-ref"></div>
+<p>[12] <a target="_blank" rel="noopener" href="https://www.crcv.ucf.edu/data/UCF101.php">https://www.crcv.ucf.edu/data/UCF101.php</a>.</p>
+<div id="13-ref"></div>
+<p>[13] <a target="_blank" rel="noopener" href="https://www.crcv.ucf.edu/data/UCF50.php">https://www.crcv.ucf.edu/data/UCF50.php</a>.</p>
+<div id="14-ref"></div>
+<p>[14] L. Bossard, M. Guillaumin, and L. Van Gool, “Food-101–mining discriminative components with random forests,” in European conference on computer vision, pp. 446–461, Springer, 2014.</p>
+<div id="15-ref"></div>
+<p>[15] T. Berg, J. Liu, S. Woo Lee, M. L. Alexander, D. W. Jacobs, and P. N. Belhumeur, “Birdsnap: Large-scale fine-grained visual categorization of birds,” in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2014.</p>
+<div id="16-ref"></div>
+<p>[16] J. Xiao, J. Hays, K. A. Ehinger, A. Oliva, and A. Torralba, “Sun database: Large-scale scene recognition from abbey to zoo,” in 2010 IEEE computer society conference on computer vision and pattern recognition, pp. 3485–3492, IEEE, 2010.</p>
+<div id="17-ref"></div>
+<p>[17] J. Xiao, K. A. Ehinger, J. Hays, A. Torralba, and A. Oliva, “Sun database: Exploring a large collection of scene c International Journal of Computer Vision, vol. 119, no. 1, pp. 3–22, 2016.</p>
+<div id="18-ref"></div>
+<p>[18] <a target="_blank" rel="noopener" href="http://places.csail.mit.edu/downloadData.html">http://places.csail.mit.edu/downloadData.html</a>.</p>
+<div id="19-ref"></div>
+<p>[19] <a target="_blank" rel="noopener" href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">http://ai.stanford.edu/~jkrause/cars/car_dataset.html</a>.</p>
+<div id="20-ref"></div>
+<p>[20] S. Maji, J. Kannala, E. Rahtu, M. Blaschko, and A. Vedaldi, “Fine-grained visual classification of aircraft,” tech. rep., 2013.</p>
+<div id="21-ref"></div>
+<p>[21] <a target="_blank" rel="noopener" href="https://sites.google.com/site/fgcomp2013/">https://sites.google.com/site/fgcomp2013/</a>.</p>
+<div id="22-ref"></div>
+<p>[22] <a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/">https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/</a>.</p>
+<div id="23-ref"></div>
+<p>[23] <a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/pets/">https://www.robots.ox.ac.uk/~vgg/data/pets/</a>.</p>
+<div id="24-ref"></div>
+<p>[24] <a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/flowers/">https://www.robots.ox.ac.uk/~vgg/data/flowers/</a>.</p>
+<div id="25-ref"></div>
+<p>[25] <a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/dtd/">https://www.robots.ox.ac.uk/~vgg/data/dtd/</a>.</p>
+<div id="26-ref"></div>
+<p>[26] <a target="_blank" rel="noopener" href="https://sites.google.com/view/fgvc5/competitions/inaturalist">https://sites.google.com/view/fgvc5/competitions/inaturalist</a>.</p>
+<div id="27-ref"></div>
+<p>[27] <a target="_blank" rel="noopener" href="https://www.inaturalist.org/">https://www.inaturalist.org/</a>.</p>
+<div id="28-ref"></div>
+<p>[28] T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, and C. L. Zitnick, “Microsoft coco: Common objects in context,” in European conference on computer vision, pp. 740–755, Springer, 2014.</p>
+<div id="29-ref"></div>
+<p>[29] <a target="_blank" rel="noopener" href="http://host.robots.ox.ac.uk/pascal/VOC/">http://host.robots.ox.ac.uk/pascal/VOC/</a>.</p>
+<div id="30-ref"></div>
+<p>[30] <a target="_blank" rel="noopener" href="http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html">http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html</a>.</p>
+<div id="31-ref"></div>
+<p>[31] <a target="_blank" rel="noopener" href="http://host.robots.ox.ac.uk/pascal/VOC/voc2011/index.html">http://host.robots.ox.ac.uk/pascal/VOC/voc2011/index.html</a>.</p>
+<div id="32-ref"></div>
+<p>[32] <a target="_blank" rel="noopener" href="http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html">http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html</a>.</p>
+<div id="33-ref"></div>
+<p>[33] B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso, and A. Torralba, “Scene parsing through ade20k dataset,” in Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 633–641, 2017.</p>
+<div id="34-ref"></div>
+<p>[34] B. Zhou, H. Zhao, X. Puig, T. Xiao, S. Fidler, A. Barriuso, and A. Torralba, “Semantic understanding of scenes through the ade20k dataset,” International Journal of Computer Vision, vol. 127, no. 3, pp. 302–321, 2019.</p>
+<div id="35-ref"></div>
+<p>[35] <a target="_blank" rel="noopener" href="https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html">https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html</a>.</p>
+<div id="36-ref"></div>
+<p>[36] M. Cordts, M. Omran, S. Ramos, T. Scharwächter, M. Enzweiler, R. Benenson, U. Franke, S. Roth, and B. Schiele, “The cityscapes dataset,” in CVPR Workshop on The Future of Datasets in Vision, 2015.</p>
+<div id="37-ref"></div>
+<p>[37] M. Cordts, M. Omran, S. Ramos, T. Rehfeld, M. Enzweiler, R. Benenson, U. Franke, S. Roth, and B. Schiele, “The cityscapes dataset for semantic urban scene understanding,” in Proc. of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.</p>
+<div id="38-ref"></div>
+<p>[38] A. Gupta, P. Dollar, and R. Girshick, “LVIS: A dataset for large vocabulary instance segmentation,” in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 2019.</p>
+<div id="39-ref"></div>
+<p>[39] <a target="_blank" rel="noopener" href="https://davischallenge.org/">https://davischallenge.org/</a>.</p>
+<div id="40-ref"></div>
+<p>[40] <a target="_blank" rel="noopener" href="https://davischallenge.org/davis2017/code.html">https://davischallenge.org/davis2017/code.html</a>.</p>
+<div id="41-ref"></div>
+<p>[41] C. Doersch, “Data analysis project: What makes paris look like paris?”.</p>
+<div id="42-ref"></div>
+<p>[42] <a target="_blank" rel="noopener" href="http://www.cs.toronto.edu/~nitish/unsupervised_video/">http://www.cs.toronto.edu/~nitish/unsupervised_video/</a>.</p>
+<div id="43-ref"></div>
+<p>[43] N. Srivastava, E. Mansimov, and R. Salakhudinov, “Unsupervised learning of video representations using lstms,” in International conference on machine learning, pp. 843–852, PMLR, 2015.</p>
+<div id="44-ref"></div>
+<p>[44] B. Thomee, D. A. Shamma, G. Friedland, B. Elizalde, K. Ni, D. Poland, D. Borth, and L.-J. Li, “Yfcc100m: The new data in multimedia research,” Communications of the ACM, vol. 59, no. 2, pp. 64–73, 2016.</p>
+<div id="45-ref"></div>
+<p>[45] <a target="_blank" rel="noopener" href="http://projects.dfki.uni-kl.de/yfcc100m/">http://projects.dfki.uni-kl.de/yfcc100m/</a>.</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://junfish.github.io/2021/07/07/popular-CV-dataset-intro/" title="Popular Datasets in SSL of CV" target="_blank" rel="external">https://junfish.github.io/2021/07/07/popular-CV-dataset-intro/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://junfish.github.io/about" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/watermelon.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://junfish.github.io/about" target="_blank"><span class="text-dark">Jason</span><small class="ml-1x">CREAM</small></a></h3>
+        <div>CVer, Researcher, Engineer, Alchemist, and brickMover are so-called CREAM, where CVer is computer vision-er.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/07/26/preprocess-imagenet-ILSVRC2012/" title="ImageNet 从下载到喂入模型训练"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Next</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/07/05/import-douban-data-from-douban-api/" title="How to import data from Douban API?"><span>Last&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">
+        <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-list"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpeg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpeg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/junfish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/images/wechat.JPG" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="/images/TIM.JPG" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: true,
+    notify: false,
+    appId: '4N4jLqMnzrb3VTxVCW3SXr92-gzGzoHsz',
+    appKey: '4oIagCIPNoMeKBYhcutQ0g2O',
+    placeholder: 'Please comment here! This box has full support for Markdown. 请评论！支持 Markdown 语法。',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

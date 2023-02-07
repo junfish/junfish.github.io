@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Tmux Cheat Sheet | 淹死了的鱼的博客</title>
+  <meta name="description" content="Structure                       Command   Start a new session 12tmux new -s &lt;session_name&gt;tmux # 按照 0, 1, 2, ··· 编号   Rename a session 1tmux rename-session -t &lt;target_session_name&gt; &lt;se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tmux Cheat Sheet">
+<meta property="og:url" content="https://junfish.github.io/2022/05/24/common-tmux-commands/index.html">
+<meta property="og:site_name" content="Jason">
+<meta property="og:description" content="Structure                       Command   Start a new session 12tmux new -s &lt;session_name&gt;tmux # 按照 0, 1, 2, ··· 编号   Rename a session 1tmux rename-session -t &lt;target_session_name&gt; &lt;se">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-05-24T23:31:35.000Z">
+<meta property="article:modified_time" content="2022-09-28T19:07:58.558Z">
+<meta property="article:author" content="Jason Yu">
+<meta property="article:tag" content="Tmux">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SSH">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://junfish.github.io/2022/05/24/common-tmux-commands/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/jason_favicon.ico" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://junfish.github.io/about" target="_blank">
+          <img class="img-circle img-rotate" src="/images/watermelon.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jason</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">CREAM</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Jinan, China; Wuxi, China; Bethlehem, U.S.</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-publications">
+          <a href="/publications">
+            
+            <i class="icon icon-papers"></i>
+            
+            <span class="menu-title">Publications</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-travels">
+          <a href="/travels/index.html">
+            
+            <i class="icon icon-plane"></i>
+            
+            <span class="menu-title">Travels</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/index.html">
+            
+            <i class="icon icon-photo"></i>
+            
+            <span class="menu-title">Photos</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-code_lib"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-books"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies">
+            
+            <i class="icon icon-movies"></i>
+            
+            <span class="menu-title">Movies</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-links"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-aboutme"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/junfish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/images/wechat.JPG" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="/images/TIM.JPG" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+<!-- </header> -->
+
+<!-- 元宵节双边灯笼样式开始 -->
+<style>
+    @media only screen and (min-width: 1124px) {
+        .nav-menu {
+            padding-right: 96px;
+        }
+    }
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+        .right {
+            float: left!important;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .right {
+            float: left!important;
+        }
+    }
+    .deng-box {
+        position: fixed;
+       /* top: -30px; */
+        top: 13px;
+        right: -20px;
+        z-index: 999;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: 13px;
+        /* right: 10px; */
+        z-index: 999;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        /* top: -20px; */
+        top: -69px;
+        left: 60px;
+        width: 2px;
+        /*  height: 20px; */
+        height: 70px;
+
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    @font-face {
+        font-family: "华文行楷";
+        src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
+    }
+    .deng-t {
+        font-family: 华文行楷;
+        font-size: 26px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 44px;
+        text-align: center;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+                -moz-transform: rotate(-10deg)
+        }
+        50% {
+             -moz-transform: rotate(10deg)
+        }
+        100% {
+                -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+                -webkit-transform: rotate(-10deg)
+        }
+        50% {
+                -webkit-transform: rotate(10deg)
+        }
+        100% {
+                -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+<div class="denglong" id="chunjie">
+<div class="deng-box">
+    <div class="deng">
+        <div class="xian"></div>
+        <div class="deng-a">
+            <div class="deng-b"><div class="deng-t">喜迎</div></div>
+        </div>
+        <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+    </div>
+</div>
+<div class="deng-box1">
+    <div class="deng">
+        <div class="xian"></div>
+        <div class="deng-a">
+            <div class="deng-b"><div class="deng-t">元宵</div></div>
+        </div>
+        <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+    </div>
+</div>
+
+</header>
+<script>
+    if((new Date().getMonth()) > 1){
+        $('.denglong').css('display', 'none');
+    }else{
+        $('.denglong').css('display', 'block');
+    }
+</script>
+<!-- 元宵节双边灯笼样式结束 -->
+
+<!-- 元宵节单边灯笼样式开始 -->
+<!-- <style> -->
+<!--     @media only screen and (min-width: 1124px) { -->
+<!--         .nav-menu { -->
+<!--             padding-right: 96px; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (max-width: 760px) { -->
+<!--         .deng-box, .deng-box1 { -->
+<!--             width: 40%; -->
+<!--         } -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (min-width: 768px) and (max-width: 1024px) { -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     .deng-box { -->
+<!--         position: fixed; -->
+<!--        /* top: -30px; */ -->
+<!--         top: 13px; -->
+<!--         right: -20px; -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 { -->
+<!--         position: fixed; -->
+<!--         top: 13px; -->
+<!--         /* right: 10px; */ -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 5s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1); -->
+<!--     } -->
+<!--     .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 3s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1); -->
+<!--     } -->
+<!--     .deng-a { -->
+<!--         width: 100px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: 12px 8px 8px 10px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .deng-b { -->
+<!--         width: 45px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: -4px 8px 8px 26px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .xian { -->
+<!--         position: absolute; -->
+<!--         /* top: -20px; */ -->
+<!--         top: -69px; -->
+<!--         left: 60px; -->
+<!--         width: 2px; -->
+<!--         /*  height: 20px; */ -->
+<!--         height: 70px; -->
+
+<!--         background: #dc8f03; -->
+<!--     } -->
+<!--     .shui-a { -->
+<!--         position: relative; -->
+<!--         width: 5px; -->
+<!--         height: 20px; -->
+<!--         margin: -5px 0 0 59px; -->
+<!--         -webkit-animation: swing 4s infinite ease-in-out; -->
+<!--         -webkit-transform-origin: 50% -45px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--     } -->
+<!--     .shui-b { -->
+<!--         position: absolute; -->
+<!--         top: 14px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 10px; -->
+<!--         background: #dc8f03; -->
+<!--         border-radius: 50%; -->
+<!--     } -->
+<!--     .shui-c { -->
+<!--         position: absolute; -->
+<!--         top: 18px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 35px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 0 5px; -->
+<!--     } -->
+<!--     .deng:before { -->
+<!--         position: absolute; -->
+<!--         top: -7px; -->
+<!--         left: 29px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         z-index: 999; -->
+<!--         border-radius: 5px 5px 0 0; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     .deng:after { -->
+<!--         position: absolute; -->
+<!--         bottom: -7px; -->
+<!--         left: 10px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         margin-left: 20px; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     @font-face { -->
+<!--         font-family: "华文行楷"; -->
+<!--         src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf'); -->
+<!--     } -->
+<!--     .deng-t { -->
+<!--         font-family: 华文行楷; -->
+<!--         font-size: 26px; -->
+<!--         color: #dc8f03; -->
+<!--         font-weight: bold; -->
+<!--         line-height: 44px; -->
+<!--         text-align: center; -->
+<!--     } -->
+<!--     .night .deng-t, -->
+<!--     .night .deng-box, -->
+<!--     .night .deng-box1 { -->
+<!--         background: transparent !important; -->
+<!--     } -->
+<!--     @-moz-keyframes swing { -->
+<!--         0% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--              -moz-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!--     @-webkit-keyframes swing { -->
+<!--         0% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--                 -webkit-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!-- </style> -->
+
+<!-- <style> -->
+<!--     @media only screen and (min-width: 1124px) { -->
+<!--         .nav-menu { -->
+<!--             padding-right: 96px; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (max-width: 760px) { -->
+<!--         .deng-box, .deng-box1 { -->
+<!--             width: 40%; -->
+<!--         } -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     @media only screen and (min-width: 768px) and (max-width: 1024px) { -->
+<!--         .right { -->
+<!--             float: left!important; -->
+<!--         } -->
+<!--     } -->
+<!--     .deng-box { -->
+<!--         position: fixed; -->
+<!--         top: -40px; -->
+<!--         right: -20px; -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 { -->
+<!--         position: fixed; -->
+<!--         top: -30px; -->
+<!--         right: 10px; -->
+<!--         z-index: 999; -->
+<!--     } -->
+<!--     .deng-box1 .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 5s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1); -->
+<!--     } -->
+<!--     .deng { -->
+<!--         position: relative; -->
+<!--         width: 120px; -->
+<!--         height: 90px; -->
+<!--         margin: 50px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.8); -->
+<!--         border-radius: 50% 50%; -->
+<!--         -webkit-transform-origin: 50% -100px; -->
+<!--         -webkit-animation: swing 3s infinite ease-in-out; -->
+<!--         box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1); -->
+<!--     } -->
+<!--     .deng-a { -->
+<!--         width: 100px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: 12px 8px 8px 10px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .deng-b { -->
+<!--         width: 45px; -->
+<!--         height: 90px; -->
+<!--         background: #d8000f; -->
+<!--         background: rgba(216, 0, 15, 0.1); -->
+<!--         margin: -4px 8px 8px 26px; -->
+<!--         border-radius: 50% 50%; -->
+<!--         border: 2px solid #dc8f03; -->
+<!--     } -->
+<!--     .xian { -->
+<!--         position: absolute; -->
+<!--         top: -20px; -->
+<!--         left: 60px; -->
+<!--         width: 2px; -->
+<!--         height: 20px; -->
+<!--         background: #dc8f03; -->
+<!--     } -->
+<!--     .shui-a { -->
+<!--         position: relative; -->
+<!--         width: 5px; -->
+<!--         height: 20px; -->
+<!--         margin: -5px 0 0 59px; -->
+<!--         -webkit-animation: swing 4s infinite ease-in-out; -->
+<!--         -webkit-transform-origin: 50% -45px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--     } -->
+<!--     .shui-b { -->
+<!--         position: absolute; -->
+<!--         top: 14px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 10px; -->
+<!--         background: #dc8f03; -->
+<!--         border-radius: 50%; -->
+<!--     } -->
+<!--     .shui-c { -->
+<!--         position: absolute; -->
+<!--         top: 18px; -->
+<!--         left: -2px; -->
+<!--         width: 10px; -->
+<!--         height: 35px; -->
+<!--         background: #ffa500; -->
+<!--         border-radius: 0 0 0 5px; -->
+<!--     } -->
+<!--     .deng:before { -->
+<!--         position: absolute; -->
+<!--         top: -7px; -->
+<!--         left: 29px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         z-index: 999; -->
+<!--         border-radius: 5px 5px 0 0; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     .deng:after { -->
+<!--         position: absolute; -->
+<!--         bottom: -7px; -->
+<!--         left: 10px; -->
+<!--         height: 12px; -->
+<!--         width: 60px; -->
+<!--         content: " "; -->
+<!--         display: block; -->
+<!--         margin-left: 20px; -->
+<!--         border-radius: 0 0 5px 5px; -->
+<!--         border: solid 1px #dc8f03; -->
+<!--         background: #ffa500; -->
+<!--         background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03); -->
+<!--     } -->
+<!--     @font-face { -->
+<!--         font-family: "华文行楷"; -->
+<!--         src: url('/fonts/华文行楷.ttf'); -->
+<!--     } -->
+<!--     .deng-t { -->
+<!--         font-family: 华文行楷; -->
+<!--         font-size: 26px; -->
+<!--         color: #dc8f03; -->
+<!--         font-weight: bold; -->
+<!--         line-height: 44px; -->
+<!--         text-align: center; -->
+<!--     } -->
+<!--     .night .deng-t, -->
+<!--     .night .deng-box, -->
+<!--     .night .deng-box1 { -->
+<!--         background: transparent !important; -->
+<!--     } -->
+<!--     @-moz-keyframes swing { -->
+<!--         0% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--              -moz-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -moz-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!--     @-webkit-keyframes swing { -->
+<!--         0% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--         50% { -->
+<!--                 -webkit-transform: rotate(10deg) -->
+<!--         } -->
+<!--         100% { -->
+<!--                 -webkit-transform: rotate(-10deg) -->
+<!--         } -->
+<!--     } -->
+<!-- </style> -->
+<!-- <div class="denglong" id="chunjie"> -->
+<!-- <div class="deng-box"> -->
+<!--     <div class="deng"> -->
+<!--         <div class="xian"></div> -->
+<!--         <div class="deng-a"> -->
+<!--             <div class="deng-b"><div class="deng-t">喜迎</div></div> -->
+<!--         </div> -->
+<!--         <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="deng-box1"> -->
+<!--     <div class="deng"> -->
+<!--         <div class="xian"></div> -->
+<!--         <div class="deng-a"> -->
+<!--             <div class="deng-b"><div class="deng-t">春节</div></div> -->
+<!--         </div> -->
+<!--         <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- </header> -->
+
+<!-- <script> -->
+<!--     if((new Date().getMonth()) > 1){ -->
+<!--         $('.denglong').css('display', 'none'); -->
+<!--     }else{ -->
+<!--         $('.denglong').css('display', 'block'); -->
+<!--     } -->
+<!-- </script> -->
+<!-- 元宵节单边灯笼样式结束 -->
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>One paper titled "Tensor-Based Multi-Modal Multi-Target Regression for Alzheimer’s Disease Prediction" is accepted by IEEE BIBM 2022!</p> <p>One paper titled "Unified Image Aesthetic and Emotional Prediction Based on Deep Multi-task Learning" is accepted by Journal of Software 2022!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      <div class="widget">
+    <h3 class="widget-title">Visiting Map</h3>
+    <div class="widget-body">
+        <div id="map">
+            <div id="visiting_map" style="width: 290px;height: 180px;">
+                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=drzP7tjzZqBa-_M3UIJUj14cI-CcbSIxdCAM7NEGIfU&cl=ffffff&w=a"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Cheatsheet/">Cheatsheet</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Debugging/">Debugging</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MachineLearning/">MachineLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Recreation/">Recreation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WritingSkills/">WritingSkills</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E4%BD%9C%E6%96%87/">小作文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/">站点建设</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Calculus/" style="font-size: 13px;">Calculus</a> <a href="/tags/Cheatsheet/" style="font-size: 13px;">Cheatsheet</a> <a href="/tags/E-mail/" style="font-size: 13px;">E-mail</a> <a href="/tags/GPU/" style="font-size: 13px;">GPU</a> <a href="/tags/ImageNet/" style="font-size: 13px;">ImageNet</a> <a href="/tags/LeanCloud/" style="font-size: 13px;">LeanCloud</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matrix/" style="font-size: 13px;">Matrix</a> <a href="/tags/Multi-X-Learning/" style="font-size: 13px;">Multi-X Learning</a> <a href="/tags/Multi-class/" style="font-size: 13px;">Multi-class</a> <a href="/tags/Multi-instance/" style="font-size: 13px;">Multi-instance</a> <a href="/tags/Multi-label/" style="font-size: 13px;">Multi-label</a> <a href="/tags/Multi-source/" style="font-size: 13px;">Multi-source</a> <a href="/tags/Multi-task/" style="font-size: 13px;">Multi-task</a> <a href="/tags/Multi-view/" style="font-size: 13px;">Multi-view</a> <a href="/tags/Nvidia/" style="font-size: 13px;">Nvidia</a> <a href="/tags/PTM/" style="font-size: 13px;">PTM</a> <a href="/tags/Preprocess/" style="font-size: 13px;">Preprocess</a> <a href="/tags/SSH/" style="font-size: 13px;">SSH</a> <a href="/tags/SSL/" style="font-size: 13px;">SSL</a> <a href="/tags/Tmux/" style="font-size: 13px;">Tmux</a> <a href="/tags/Valine/" style="font-size: 13px;">Valine</a> <a href="/tags/benchmark-datasets/" style="font-size: 13px;">benchmark datasets</a> <a href="/tags/billiards/" style="font-size: 13px;">billiards</a> <a href="/tags/commands/" style="font-size: 13.5px;">commands</a> <a href="/tags/comment-system/" style="font-size: 13px;">comment system</a> <a href="/tags/conda/" style="font-size: 13px;">conda</a> <a href="/tags/derivative/" style="font-size: 13px;">derivative</a> <a href="/tags/driver/" style="font-size: 13px;">driver</a> <a href="/tags/github/" style="font-size: 13px;">github</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/linux/" style="font-size: 13px;">linux</a> <a href="/tags/macintosh/" style="font-size: 13px;">macintosh</a> <a href="/tags/plugins/" style="font-size: 13px;">plugins</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/terminology/" style="font-size: 13px;">terminology</a> <a href="/tags/virtual-environment/" style="font-size: 13px;">virtual environment</a> <a href="/tags/writing/" style="font-size: 13px;">writing</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/" style="font-size: 13px;">个人感悟</a> <a href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">评论系统</a> <a href="/tags/%E9%A2%84%E5%A4%84%E7%90%86/" style="font-size: 13px;">预处理</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B0%8F%E4%BD%9C%E6%96%87/">小作文</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/04/share-my-experience/" class="title">应大学本科导员孙朋朋老师邀约给大二学子分享经验</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-04T18:33:10.000Z" itemprop="datePublished">2022-10-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Debugging/">Debugging</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/23/nvidia-driver-mismatch/" class="title">Failed to initialize NVML: Driver/library version mismatch</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-23T20:12:13.000Z" itemprop="datePublished">2022-09-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/MachineLearning/">MachineLearning</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/24/matrix-calculus/" class="title">The Matrix Calculus</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-25T02:03:22.000Z" itemprop="datePublished">2022-08-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/03/common-markdown-commands/" class="title">Markdown Grammer Cheat Sheet</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-04T03:58:37.000Z" itemprop="datePublished">2022-08-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Cheatsheet/">Cheatsheet</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/18/counting-files-or-folders/" class="title">Cheat Sheet of Counting Files or Folders</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-18T20:30:55.000Z" itemprop="datePublished">2022-06-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#structure"><span class="toc-number">1.</span> <span class="toc-text"> Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#command"><span class="toc-number">2.</span> <span class="toc-text"> Command</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-number">3.</span> <span class="toc-text"> Reference</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-common-tmux-commands" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Tmux Cheat Sheet
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/24/common-tmux-commands/" class="article-date">
+	  <time datetime="2022-05-24T23:31:35.000Z" itemprop="datePublished">2022-05-24</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Cheatsheet/">Cheatsheet</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="article-tag-link-link" href="/tags/SSH/" rel="tag">SSH</a>, <a class="article-tag-link-link" href="/tags/Tmux/" rel="tag">Tmux</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/05/24/common-tmux-commands/" class="leancloud_visitors"  data-flag-title="Tmux Cheat Sheet">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/24/common-tmux-commands/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 287(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="structure"><a class="markdownIt-Anchor" href="#structure"></a> Structure</h3>
+
+    <div class="markmap-container" style="height:300px">
+      <svg data='{"t":"root","d":0,"v":"","c":[{"t":"list_item","d":2,"p":{"lines":[0,1]},"v":"Session 1","c":[{"t":"list_item","d":4,"p":{"lines":[1,2]},"v":"Window 1","c":[{"t":"list_item","d":6,"p":{"lines":[2,3]},"v":"Pane 1"},{"t":"list_item","d":6,"p":{"lines":[3,4]},"v":"Pane 2"},{"t":"list_item","d":6,"p":{"lines":[4,5]},"v":"······"}]},{"t":"list_item","d":4,"p":{"lines":[5,6]},"v":"Window 2"},{"t":"list_item","d":4,"p":{"lines":[6,7]},"v":"······"}]},{"t":"list_item","d":2,"p":{"lines":[7,8]},"v":"Session 2"},{"t":"list_item","d":2,"p":{"lines":[8,9]},"v":"······"}],"p":{}}'></svg>
+    </div>
+  
+<h3 id="command"><a class="markdownIt-Anchor" href="#command"></a> Command</h3>
+<ol>
+<li>
+<p>Start a new session</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux new -s &lt;session_name&gt;</span><br><span class="line">tmux <span class="comment"># 按照 0, 1, 2, ··· 编号</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Rename a session</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux rename-session -t &lt;target_session_name&gt; &lt;session_new_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Detach the current session</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux detach</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Show all current sessions</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux ls</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Attach a session</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux attach -t &lt;session_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Kill a session</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tmux kill-session -t &lt;session_name&gt; <span class="comment"># kill the specific session</span></span><br><span class="line">tmux kill-session -a <span class="comment"># kill all sessions but the current</span></span><br><span class="line">tmux kill-session -a -t &lt;session_name&gt; <span class="comment"># kill all sessions but the &lt;session_name&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Switch between two sessions</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux switch -t &lt;session_name&gt; # switch to the &lt;session_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Create a new window</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux new-window -n &lt;window_name&gt; # create a new window named window_name</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Select a window</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux select-window -t &lt;window_name/window_number&gt; # swap to a specific window</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Rename a window</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux rename-window &lt;new_name&gt; # rename the current window</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Split a window into two panes</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux split-window # divide the window into two top and bottom panes</span><br><span class="line">tmux split-window -h # divide the window into two left and right panes</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Move cursor</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux select-pane -U/-D/-L/-R # move the cursor to the top/bottom/left/right pane</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Swap two panes</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux swap-pane -U/-D # move the current pane to the top/bottom</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h3>
+<p>[1] <a target="_blank" rel="noopener" href="https://gist.github.com/ryerh/14b7c24dfd623ef8edc7">Tmux 快捷键 &amp; 速查表 &amp; 简明教程</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://tmuxcheatsheet.com/">Tmux Cheat Sheet &amp; Quick Reference</a></p>
+
+    <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.7"></script>
+    <script> document.querySelectorAll('.markmap-container>svg').forEach(mindmap => markmap.Markmap.create(mindmap, null, JSON.parse(mindmap.getAttribute('data'))))</script>
+  
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://junfish.github.io/2022/05/24/common-tmux-commands/" title="Tmux Cheat Sheet" target="_blank" rel="external">https://junfish.github.io/2022/05/24/common-tmux-commands/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://junfish.github.io/about" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/watermelon.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://junfish.github.io/about" target="_blank"><span class="text-dark">Jason</span><small class="ml-1x">CREAM</small></a></h3>
+        <div>CVer, Researcher, Engineer, Alchemist, and brickMover are so-called CREAM, where CVer is computer vision-er.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/05/25/common-conda-commands/" title="Conda Cheat Sheet"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Next</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/03/27/regular-errors-happened-in-hexo/" title="hexo 中常见错误及其解决方案"><span>Last&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">
+        <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-list"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpeg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpeg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/junfish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/images/wechat.JPG" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="/images/TIM.JPG" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: true,
+    notify: false,
+    appId: '4N4jLqMnzrb3VTxVCW3SXr92-gzGzoHsz',
+    appKey: '4oIagCIPNoMeKBYhcutQ0g2O',
+    placeholder: 'Please comment here! This box has full support for Markdown. 请评论！支持 Markdown 语法。',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

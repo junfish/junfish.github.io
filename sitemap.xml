@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://junfish.github.io/publications/index.html</loc>
+    
+    <lastmod>2023-02-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/08/24/matrix-calculus/</loc>
+    
+    <lastmod>2022-10-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/10/04/share-my-experience/</loc>
+    
+    <lastmod>2022-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/07/26/preprocess-imagenet-ILSVRC2012/</loc>
+    
+    <lastmod>2022-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/05/24/common-tmux-commands/</loc>
+    
+    <lastmod>2022-09-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/09/23/nvidia-driver-mismatch/</loc>
+    
+    <lastmod>2022-09-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/about/index.html</loc>
+    
+    <lastmod>2022-09-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/07/07/popular-CV-dataset-intro/</loc>
+    
+    <lastmod>2022-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/08/03/common-markdown-commands/</loc>
+    
+    <lastmod>2022-08-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/06/18/counting-files-or-folders/</loc>
+    
+    <lastmod>2022-06-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/05/25/common-conda-commands/</loc>
+    
+    <lastmod>2022-06-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/09/15/practice-in-email-writing/</loc>
+    
+    <lastmod>2022-05-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/09/10/difference-between-multi-X-learning/</loc>
+    
+    <lastmod>2022-05-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2022/03/27/regular-errors-happened-in-hexo/</loc>
+    
+    <lastmod>2022-05-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/10/02/terminology-in-billiards/</loc>
+    
+    <lastmod>2022-04-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/07/05/import-douban-data-from-douban-api/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/07/04/import-comment-system/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/07/03/how-to-create-blog-md/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/2021/07/02/hello-world/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/links/index.html</loc>
+    
+    <lastmod>2022-03-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/index.html</loc>
+    
+    <lastmod>2021-07-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/index.html</loc>
+    
+    <lastmod>2021-07-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/repository/index.html</loc>
+    
+    <lastmod>2021-07-03</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://junfish.github.io/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://junfish.github.io/tags/conda/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/python/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/virtual-environment/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/commands/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Tmux/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Linux/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/SSH/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/linux/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-X-Learning/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-class/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-label/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-instance/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-view/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-source/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Multi-task/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Markdown/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Cheatsheet/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/hexo/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/github/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/macintosh/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/comment-system/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/LeanCloud/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Valine/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/plugins/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Nvidia/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/GPU/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/driver/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/E-mail/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/writing/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/ImageNet/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Preprocess/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/billiards/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/terminology/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Matrix/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/Calculus/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/derivative/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/PTM/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/SSL/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/benchmark-datasets/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/CV/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://junfish.github.io/categories/Cheatsheet/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/MachineLearning/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/Debugging/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/WritingSkills/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/%E5%B0%8F%E4%BD%9C%E6%96%87/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/categories/Recreation/</loc>
+    <lastmod>2023-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
