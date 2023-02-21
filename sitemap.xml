@@ -375,6 +375,13 @@
   </url>
   
   <url>
+    <loc>https://junfish.github.io/tags/E-mail/</loc>
+    <lastmod>2023-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://junfish.github.io/tags/writing/</loc>
     <lastmod>2023-02-21</lastmod>
     <changefreq>daily</changefreq>
@@ -397,13 +404,6 @@
   
   <url>
     <loc>https://junfish.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2023-02-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://junfish.github.io/tags/E-mail/</loc>
     <lastmod>2023-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
