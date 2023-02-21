@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://junfish.github.io/2021/07/03/practice-in-paper-writing/</loc>
+    <lastmod>2023-02-16</lastmod>
+  </url>
+  <url>
+    <loc>https://junfish.github.io/2021/07/03/how-to-create-blog-md/</loc>
+    <lastmod>2023-02-11</lastmod>
+  </url>
+  <url>
     <loc>https://junfish.github.io/2022/03/27/regular-errors-happened-in-hexo/</loc>
     <lastmod>2023-02-07</lastmod>
   </url>
@@ -58,10 +66,6 @@
   </url>
   <url>
     <loc>https://junfish.github.io/2021/07/04/import-comment-system/</loc>
-    <lastmod>2022-03-25</lastmod>
-  </url>
-  <url>
-    <loc>https://junfish.github.io/2021/07/03/how-to-create-blog-md/</loc>
     <lastmod>2022-03-25</lastmod>
   </url>
   <url>
