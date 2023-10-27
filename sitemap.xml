@@ -494,7 +494,14 @@
   </url>
   
   <url>
-    <loc>https://junfish.github.io/tags/THC-delta-9/</loc>
+    <loc>https://junfish.github.io/tags/THC/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://junfish.github.io/tags/%E8%87%B4%E5%B9%BB/</loc>
     <lastmod>2023-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
